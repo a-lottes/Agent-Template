@@ -1,0 +1,14 @@
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "https://<ai-hub-host>",
+    "ANTHROPIC_MODEL": "<hub-default-model>",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "<hub-large-model>",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "<hub-default-model>",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "<hub-small-model>",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
+  },
+  "apiKeyHelper": "security find-generic-password -s adesso-ai-hub -w",
+  "permissions": {
+    "deny": ["WebFetch", "WebSearch"]
+  }
+}
