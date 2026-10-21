@@ -1,1 +1,6 @@
 .DS_Store
+.claude/settings.local.json
+evals/results/
+__pycache__/
+providers/.hub-url
+docs/demo/PERSOENLICH.md

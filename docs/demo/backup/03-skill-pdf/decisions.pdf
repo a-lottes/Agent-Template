@@ -1,0 +1,73 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Length 1958 >>
+stream
+BT 0.45 g /F1 8 Tf 50.0 811.9 Td (Project Memory · Decisions) Tj ET
+BT 0.45 g /F1 8 Tf 485.3 811.9 Td (2026-10-21) Tj ET
+BT 0.0 g /F2 16 Tf 50.0 762.9 Td (Decisions) Tj ET
+0.92 g 50.0 738.9 73.1 16.0 re f
+0.7 G 0.5 w 50.0 738.9 73.1 16.0 re S
+BT 0.0 g /F2 8 Tf 53.0 743.9 Td (Date) Tj ET
+0.92 g 123.1 738.9 155.4 16.0 re f
+0.7 G 0.5 w 123.1 738.9 155.4 16.0 re S
+BT 0.0 g /F2 8 Tf 126.1 743.9 Td (Decision) Tj ET
+0.92 g 278.5 738.9 62.3 16.0 re f
+0.7 G 0.5 w 278.5 738.9 62.3 16.0 re S
+BT 0.0 g /F2 8 Tf 281.5 743.9 Td (Decided by) Tj ET
+0.92 g 340.8 738.9 204.4 16.0 re f
+0.7 G 0.5 w 340.8 738.9 204.4 16.0 re S
+BT 0.0 g /F2 8 Tf 343.8 743.9 Td (Source) Tj ET
+0.7 G 0.5 w 50.0 702.9 73.1 36.0 re S
+BT 0.0 g /F1 8 Tf 53.0 727.9 Td (2026-10-12) Tj ET
+0.7 G 0.5 w 123.1 702.9 155.4 36.0 re S
+BT 0.0 g /F1 8 Tf 126.1 727.9 Td (Go-live date moved from 30 Nov to 14) Tj ET
+BT 0.0 g /F1 8 Tf 126.1 717.9 Td (Dec because the data migration is not) Tj ET
+BT 0.0 g /F1 8 Tf 126.1 707.9 Td (ready) Tj ET
+0.7 G 0.5 w 278.5 702.9 62.3 36.0 re S
+BT 0.0 g /F1 8 Tf 281.5 727.9 Td (Clara) Tj ET
+0.7 G 0.5 w 340.8 702.9 204.4 36.0 re S
+BT 0.0 g /F1 8 Tf 343.8 727.9 Td (2026-10-12-steering.md: "Clara confirmed the go-live) Tj ET
+BT 0.0 g /F1 8 Tf 343.8 717.9 Td (moves from 30 Nov to 14 Dec because the data) Tj ET
+BT 0.0 g /F1 8 Tf 343.8 707.9 Td (migration is not ready.") Tj ET
+0.7 G 0.5 w 50.0 676.9 73.1 26.0 re S
+BT 0.0 g /F1 8 Tf 53.0 691.9 Td (2026-10-12) Tj ET
+0.7 G 0.5 w 123.1 676.9 155.4 26.0 re S
+BT 0.0 g /F1 8 Tf 126.1 691.9 Td (Pilot starts with the claims department) Tj ET
+BT 0.0 g /F1 8 Tf 126.1 681.9 Td (only) Tj ET
+0.7 G 0.5 w 278.5 676.9 62.3 26.0 re S
+BT 0.0 g /F1 8 Tf 281.5 691.9 Td (TBD) Tj ET
+0.7 G 0.5 w 340.8 676.9 204.4 26.0 re S
+BT 0.0 g /F1 8 Tf 343.8 691.9 Td (2026-10-12-steering.md: "Decision: the pilot starts) Tj ET
+BT 0.0 g /F1 8 Tf 343.8 681.9 Td (with the claims department only.") Tj ET
+BT 0.45 g /F1 8 Tf 282.6 30 Td (1 / 1) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 5 0 R >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000212 00000 n 
+0000000314 00000 n 
+0000002324 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+2466
+%%EOF

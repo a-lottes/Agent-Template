@@ -1,0 +1,80 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Length 2221 >>
+stream
+BT 0.45 g /F1 8 Tf 50.0 811.9 Td (Project Memory · Risks) Tj ET
+BT 0.45 g /F1 8 Tf 485.3 811.9 Td (2026-10-21) Tj ET
+BT 0.0 g /F2 16 Tf 50.0 762.9 Td (Risks) Tj ET
+0.92 g 50.0 738.9 142.9 16.0 re f
+0.7 G 0.5 w 50.0 738.9 142.9 16.0 re S
+BT 0.0 g /F2 8 Tf 53.0 743.9 Td (Risk) Tj ET
+0.92 g 192.9 738.9 46.0 16.0 re f
+0.7 G 0.5 w 192.9 738.9 46.0 16.0 re S
+BT 0.0 g /F2 8 Tf 195.9 743.9 Td (Impact) Tj ET
+0.92 g 238.9 738.9 65.9 16.0 re f
+0.7 G 0.5 w 238.9 738.9 65.9 16.0 re S
+BT 0.0 g /F2 8 Tf 241.9 743.9 Td (Likelihood) Tj ET
+0.92 g 304.8 738.9 62.6 16.0 re f
+0.7 G 0.5 w 304.8 738.9 62.6 16.0 re S
+BT 0.0 g /F2 8 Tf 307.8 743.9 Td (Mitigation) Tj ET
+0.92 g 367.4 738.9 177.9 16.0 re f
+0.7 G 0.5 w 367.4 738.9 177.9 16.0 re S
+BT 0.0 g /F2 8 Tf 370.4 743.9 Td (Source) Tj ET
+0.7 G 0.5 w 50.0 702.9 142.9 36.0 re S
+BT 0.0 g /F1 8 Tf 53.0 727.9 Td (Test environment still uses) Tj ET
+BT 0.0 g /F1 8 Tf 53.0 717.9 Td (production-like data; cleanup) Tj ET
+BT 0.0 g /F1 8 Tf 53.0 707.9 Td (unowned) Tj ET
+0.7 G 0.5 w 192.9 702.9 46.0 36.0 re S
+BT 0.0 g /F1 8 Tf 195.9 727.9 Td (TBD) Tj ET
+0.7 G 0.5 w 238.9 702.9 65.9 36.0 re S
+BT 0.0 g /F1 8 Tf 241.9 727.9 Td (TBD) Tj ET
+0.7 G 0.5 w 304.8 702.9 62.6 36.0 re S
+BT 0.0 g /F1 8 Tf 307.8 727.9 Td (TBD) Tj ET
+0.7 G 0.5 w 367.4 702.9 177.9 36.0 re S
+BT 0.0 g /F1 8 Tf 370.4 727.9 Td (2026-10-12-steering.md: "Dev raised that the) Tj ET
+BT 0.0 g /F1 8 Tf 370.4 717.9 Td (test environment still uses production-like data.) Tj ET
+BT 0.0 g /F1 8 Tf 370.4 707.9 Td (Nobody owns the cleanup yet.") Tj ET
+0.7 G 0.5 w 50.0 676.9 142.9 26.0 re S
+BT 0.0 g /F1 8 Tf 53.0 691.9 Td (Vendor API rate limit might not carry) Tj ET
+BT 0.0 g /F1 8 Tf 53.0 681.9 Td (the pilot load) Tj ET
+0.7 G 0.5 w 192.9 676.9 46.0 26.0 re S
+BT 0.0 g /F1 8 Tf 195.9 691.9 Td (TBD) Tj ET
+0.7 G 0.5 w 238.9 676.9 65.9 26.0 re S
+BT 0.0 g /F1 8 Tf 241.9 691.9 Td (TBD) Tj ET
+0.7 G 0.5 w 304.8 676.9 62.6 26.0 re S
+BT 0.0 g /F1 8 Tf 307.8 691.9 Td (TBD) Tj ET
+0.7 G 0.5 w 367.4 676.9 177.9 26.0 re S
+BT 0.0 g /F1 8 Tf 370.4 691.9 Td (2026-10-12-steering.md: "Risk: the vendor API) Tj ET
+BT 0.0 g /F1 8 Tf 370.4 681.9 Td (rate limit might not carry the pilot load.") Tj ET
+BT 0.45 g /F1 8 Tf 282.6 30 Td (1 / 1) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 5 0 R >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000212 00000 n 
+0000000314 00000 n 
+0000002587 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+2729
+%%EOF
