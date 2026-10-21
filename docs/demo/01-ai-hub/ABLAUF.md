@@ -26,7 +26,7 @@ Der Hub wird **gezeigt**, nicht durchgängig benutzt. Ab Schritt 02 läuft alles
 
 | Weg | Befehl | Wann |
 |---|---|---|
-| **In Claude Code** (empfohlen) | `/provider adesso-hub` → `/exit` → `claude -c` | live auf der Bühne, Gespräch läuft weiter |
+| **In Claude Code** (empfohlen) | `/provider adesso-hub` → `/exit` → `claude -c` | live auf der Bühne, Gespräch läuft weiter. Verfügbar in `~/agent-demo` **und** im Repo-Ordner |
 | Einmalig, ohne umzuschalten | `claude --settings .claude/providers/adesso-hub.json` | „nur mal kurz zeigen“ |
 | VS Code ohne Terminal | *Terminal → Run Task… → Provider: …* | für Kolleg:innen, die nicht tippen wollen |
 
@@ -117,7 +117,7 @@ Copilot-Chat öffnen, Modellauswahl aufklappen: oben die Copilot-Modelle (u. a. 
 
 | Problem | Ausweg |
 |---|---|
-| `/provider` unbekannt | Workspace nicht aktuell → `demo/setup-workspace.sh`, oder im Terminal `project-memory/scripts/provider.sh adesso-hub` |
+| `/provider` unbekannt | Claude im falschen Ordner gestartet. `/provider` ist ein Projekt-Befehl und existiert nur in `~/agent-demo` (nach `demo/setup-workspace.sh`) und im Repo-Ordner ab Branch `demo/01-ai-hub`. In VS Code den passenden Ordner öffnen. Notlösung im Terminal: `project-memory/scripts/provider.sh adesso-hub` |
 | Nach `/exit` + `claude -c` noch alter Provider | Vertrauensdialog nicht bestätigt (Hook lief nicht) → im Terminal `project-memory/scripts/provider.sh adesso-hub`, dann `claude -c` |
 | `/status` zeigt trotzdem den Hub nach `/provider anthropic` | Alias aktiv → `command claude -c --plugin-dir ./project-memory` |
 | `No AI Hub key found` | `scripts/provider.sh set-key` |
