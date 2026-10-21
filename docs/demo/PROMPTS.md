@@ -189,7 +189,7 @@ grep "GitHub repo" ~/agent-demo/CLAUDE.md     # muss a-lottes/Agent-Template zei
 /exit
 ```
 ```bash
-cd ~/agent-demo && claude -c --plugin-dir ./project-memory
+cd ~/agent-demo && claude --plugin-dir ./project-memory      # neue Sitzung, memory/ liegt auf der Platte
 ```
 
 **Claude Code**
