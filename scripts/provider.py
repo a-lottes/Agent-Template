@@ -3,6 +3,7 @@
 
     provider.sh                             status of the current workspace
     provider.sh <profile>                   short for: use <profile>
+    provider.sh <profile> --next            stage the switch, applied on /exit (used by /provider)
     provider.sh list
     provider.sh use <profile> [workspace]   writes <workspace>/.claude/settings.local.json
     provider.sh status [workspace]
@@ -81,26 +82,38 @@ def cmd_list(_args) -> None:
 
 
 def cmd_use(args) -> None:
+    """--next: only stage the switch (.json.next); the workspace's SessionEnd hook applies it on /exit.
+    Used by /provider, because Claude Code reloads settings instantly and the running turn would
+    otherwise go to the new provider with the old model."""
+    staged = "--next" in args
+    args = [a for a in args if a != "--next"]
     if not args:
-        sys.exit("usage: provider.sh use <profile> [workspace]")
+        sys.exit("usage: provider.sh use <profile> [workspace] [--next]")
     settings = load_profile(args[0])
     ws = Path(args[1]).expanduser() if len(args) > 1 else DEFAULT_WS
-    target = ws / ".claude" / "settings.local.json"
+    target = ws / ".claude" / ("settings.local.json.next" if staged else "settings.local.json")
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(json.dumps(settings, indent=2) + "\n")
     print(f"Wrote {target}\n{describe(settings)}")
-    print("\nActive from the next start. In Claude Code: /exit, then `claude -c` to continue\n"
-          "this conversation on the new provider (VS Code: open a new Claude session).")
+    if staged:
+        print("\nStaged. Takes effect on /exit; then `claude -c` continues this conversation on the new provider.")
+    else:
+        print("\nActive from the next start. In Claude Code: /exit, then `claude -c` to continue\n"
+              "this conversation on the new provider (VS Code: open a new Claude session).")
     warn_about_alias()
 
 
 def cmd_status(args) -> None:
+    args = [a for a in args if a != "--next"]
     ws = Path(args[0]).expanduser() if args else DEFAULT_WS
     target = ws / ".claude" / "settings.local.json"
     if not target.exists():
         print(f"No provider set in {ws} (global Claude Code settings apply).")
-        return
-    print(f"{target}\n{describe(json.loads(target.read_text()))}")
+    else:
+        print(f"Active: {target}\n{describe(json.loads(target.read_text()))}")
+    staged = target.with_name("settings.local.json.next")
+    if staged.exists():
+        print(f"\nStaged for the next start:\n{describe(json.loads(staged.read_text()))}")
     warn_about_alias()
 
 
@@ -148,7 +161,7 @@ COMMANDS = {"list": cmd_list, "use": cmd_use, "status": cmd_status, "files": cmd
 
 if __name__ == "__main__":
     args = sys.argv[1:]
-    if not args:
+    if not [a for a in args if a != "--next"]:
         cmd_status([])
     elif args[0] in COMMANDS:
         COMMANDS[args[0]](args[1:])
