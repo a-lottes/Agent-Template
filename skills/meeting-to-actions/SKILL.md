@@ -1,6 +1,6 @@
 ---
 name: meeting-to-actions
-description: Use whenever files in inbox/ (meeting notes, minutes, transcripts, project documents) should be processed into the project memory, i.e. decisions, action items, risks or open questions written to memory/decisions.md, memory/actions.md, memory/risks.md. Also for German requests (Protokoll, Besprechungsnotizen, Mitschrift, Projektgedächtnis, Aufgaben, Entscheidungen, Risiken).
+description: Use whenever files in inbox/ (meeting notes, minutes, transcripts, project documents) should be processed into the project memory, i.e. decisions, action items, risks or open questions written to memory/decisions.md, memory/actions.md, memory/risks.md. Also when open action items should become GitHub issues. Also for German requests (Protokoll, Besprechungsnotizen, Mitschrift, Projektgedächtnis, Aufgaben, Entscheidungen, Risiken, Issues/Tickets anlegen).
 ---
 
 # Meeting to actions
@@ -43,6 +43,14 @@ Run each subagent in the foreground (`run_in_background: false`) and wait for it
    `python3 ${CLAUDE_SKILL_DIR}/scripts/md_to_pdf.py memory`
    Markdown stays the source of truth; never edit the PDFs.
 7. Summarise what was added, what was rejected and why, and list open questions.
+
+## Later: action items as GitHub issues
+
+Only when the user asks for it (e.g. "create issues for the open actions", "Tickets anlegen"):
+
+1. Preview: `python3 ${CLAUDE_SKILL_DIR}/scripts/create_issues.py memory/actions.md --dry-run`. Show the list and ask the user to confirm.
+2. After the user confirms: run the same command without `--dry-run`. It writes `#<issue>` into the Status column, so re-runs never create duplicates.
+3. Re-render the PDFs (step 6) and report the issue links.
 
 ## Rules
 

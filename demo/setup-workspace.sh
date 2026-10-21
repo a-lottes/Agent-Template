@@ -27,6 +27,10 @@ find "${WS:?}/inbox" "${WS:?}/later" -mindepth 1 -delete
 cp "$REPO"/examples/inbox/*.md "$WS/inbox/"
 cp "$REPO"/examples/later/*.md "$WS/later/"
 cp "$REPO/examples/CLAUDE.md" "$WS/CLAUDE.md"
+# Target repo for GitHub issues (step 04): DEMO_GH_REPO=owner/name demo/setup-workspace.sh
+if [ -n "${DEMO_GH_REPO:-}" ]; then
+  sed -i.bak "s|<owner/repo>|$DEMO_GH_REPO|" "$WS/CLAUDE.md" && rm -f "$WS/CLAUDE.md.bak"
+fi
 
 # Project settings shared by all providers. The provider itself lives in
 # .claude/settings.local.json (see scripts/provider.sh from branch demo/01-ai-hub on).
