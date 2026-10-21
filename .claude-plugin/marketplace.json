@@ -1,0 +1,16 @@
+{
+  "name": "adesso-agent-demo",
+  "owner": {
+    "name": "adesso BL-AT 2026"
+  },
+  "metadata": {
+    "description": "Demo marketplace for the BL-AT 2026 hands-on: Claude skills with the adesso AI Hub."
+  },
+  "plugins": [
+    {
+      "name": "project-memory",
+      "source": "./",
+      "description": "Turns meeting notes into decisions, actions and risks, with review and guardrails."
+    }
+  ]
+}
