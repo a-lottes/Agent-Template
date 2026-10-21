@@ -4,6 +4,17 @@ Alles zum Kopieren, in der Reihenfolge der Demo. **Terminal** = normales Termina
 
 Repo-Pfad in den Beispielen: `~/Documents/projects/Agent-Template`. Workspace der Demo: `~/agent-demo`.
 
+## Zwei Grundregeln
+
+**Wo testen?** Repo = Code und Branches, `~/agent-demo` = Bühne. Claude für die Demo immer in `~/agent-demo` starten (in VS Code: Ordner `~/agent-demo` öffnen). Im Repo-Ordner funktioniert `/provider` auch, die Skill-Schritte aber nicht sinnvoll: Der Skill braucht `inbox/` und `memory/`, und der Plugin-Hook erlaubt Schreiben nur in `memory/`.
+
+**Welche Flags?** Nur eines: `claude -c`, um das letzte Gespräch fortzusetzen (nach `/provider`). Alles andere erledigt `demo/setup-workspace.sh`:
+- registriert das Plugin für den Workspace (ab Branch 02), deshalb reicht `claude` statt `claude --plugin-dir …`, auch im VS-Code-Panel
+- erlaubt Schreiben in `memory/` und die Skill-Skripte ohne Rückfrage (nach bestätigtem Vertrauensdialog)
+- setzt den Provider standardmäßig auf `anthropic`
+
+Nach einem Branch-Sprung mit `--plugin-only` lädt `/reload-plugins` das neue Plugin auch ohne Neustart.
+
 ---
 
 ## Einmalig vorab (Tage vor dem Termin)
@@ -22,7 +33,7 @@ scripts/model_check.py                              # Hub-Modelle testen (Tool-C
 gh auth status                                      # Account mit Schreibrechten aktiv?
 DEMO_GH_REPO=a-lottes/Agent-Template demo/setup-workspace.sh
 
-cd ~/agent-demo && claude                           # Vertrauensdialog bestätigen, dann /exit
+cd ~/agent-demo && claude                           # Vertrauensdialog bestätigen (wichtig!), dann /exit
 ```
 
 Ein eventueller Alias `alias claude="… --settings …"` muss weg (neue Shell öffnen).
@@ -38,7 +49,7 @@ cd ~/Documents/projects/Agent-Template
 git switch demo/01-ai-hub
 DEMO_GH_REPO=a-lottes/Agent-Template demo/setup-workspace.sh
 cd ~/agent-demo
-claude --plugin-dir ./project-memory
+claude
 ```
 
 ---
@@ -66,7 +77,7 @@ claude --plugin-dir ./project-memory
 **Terminal**
 
 ```bash
-claude -c --plugin-dir ./project-memory
+claude -c
 ```
 
 **Claude Code**
@@ -90,7 +101,7 @@ Fasse inbox/2026-10-12-steering.md in drei Stichpunkten zusammen.
 **Terminal**
 
 ```bash
-claude -c --plugin-dir ./project-memory
+claude -c
 ```
 
 **Copilot (VS Code):** Chat öffnen → Modellauswahl → „Adesso AI Hub · DeepSeek“ wählen →
@@ -117,7 +128,7 @@ Claude-Sitzung neu starten, damit das Plugin neu geladen wird:
 /exit
 ```
 ```bash
-claude --plugin-dir ./project-memory
+claude
 ```
 
 **Claude Code**
@@ -153,7 +164,7 @@ DEMO_GH_REPO=a-lottes/Agent-Template demo/setup-workspace.sh     # frisches memo
 /exit
 ```
 ```bash
-cd ~/agent-demo && claude --plugin-dir ./project-memory
+cd ~/agent-demo && claude
 ```
 
 **Claude Code**
@@ -191,7 +202,7 @@ grep "GitHub repo" ~/agent-demo/CLAUDE.md     # muss a-lottes/Agent-Template zei
 /exit
 ```
 ```bash
-cd ~/agent-demo && claude --plugin-dir ./project-memory      # neue Sitzung, memory/ liegt auf der Platte
+cd ~/agent-demo && claude      # neue Sitzung, memory/ liegt auf der Platte
 ```
 
 **Claude Code**
@@ -247,5 +258,5 @@ cd ~/Documents/projects/Agent-Template
 git switch demo/<schritt>
 DEMO_GH_REPO=a-lottes/Agent-Template demo/setup-workspace.sh   # frisch
 # oder: demo/setup-workspace.sh --plugin-only                   # memory/ behalten
-cd ~/agent-demo && claude --plugin-dir ./project-memory
+cd ~/agent-demo && claude
 ```

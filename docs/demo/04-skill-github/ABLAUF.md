@@ -84,7 +84,7 @@ Hinweis: `--plugin-only` behält `memory/` aus Schritt 03. Das Ziel-Repo merkt s
 
 ### 4 · Issues anlegen (90 s)
 
-In einer **neuen** Claude-Code-Sitzung (`/exit`, dann `claude --plugin-dir ./project-memory`). Die Ergebnisse aus Schritt 03 liegen ja in `memory/`. Hintergrund: Setzt man das alte Gespräch mit `-c` fort, kann Claude geänderte Projektdateien misstrauisch hinterfragen. Das ist gutes Verhalten, kostet live aber Zeit:
+In einer **neuen** Claude-Code-Sitzung (`/exit`, dann `claude`). Die Ergebnisse aus Schritt 03 liegen ja in `memory/`. Hintergrund: Setzt man das alte Gespräch mit `-c` fort, kann Claude geänderte Projektdateien misstrauisch hinterfragen. Das ist gutes Verhalten, kostet live aber Zeit:
 
 ```
 Lege für die offenen Aufgaben GitHub-Issues an.
