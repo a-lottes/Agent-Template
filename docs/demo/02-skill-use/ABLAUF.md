@@ -25,6 +25,10 @@ Was gegenüber Teil 1 am Skill korrigiert ist (in der Generalprobe gemessen, all
 | Datum „19 Oct“ statt ISO | Regel: `YYYY-MM-DD` |
 | „Probably Ben will …“ wurde feste Zuweisung | Regel: vage → `TBD` + offene Frage |
 
+### Wie das Plugin im Workspace geladen wird
+
+`demo/setup-workspace.sh` registriert das Plugin ab diesem Branch lokal für `~/agent-demo` (`claude plugin marketplace add ./project-memory --scope local` + `claude plugin install project-memory@adesso-agent-demo --scope local`). Es lädt direkt aus `~/agent-demo/project-memory`, deshalb reicht ein einfaches `claude`, auch im VS-Code-Panel. Aufräumen nach der Demo: `claude plugin marketplace remove adesso-agent-demo`.
+
 ## Anatomie eines Skills (zum Zeigen)
 
 ```
@@ -82,7 +86,7 @@ Sagen: *„Wie ein Linter: Struktur und Frontmatter stimmen.“* (Ausführlicher
 
 ```bash
 cd ~/agent-demo
-claude --plugin-dir ./project-memory
+claude
 ```
 
 Prompt (natürliche Sprache, kein Slash-Command):

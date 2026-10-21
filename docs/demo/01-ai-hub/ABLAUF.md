@@ -75,7 +75,7 @@ demo/setup-workspace.sh              # Workspace inkl. /provider, Standard: anth
 
 ```bash
 cd ~/agent-demo
-claude --plugin-dir ./project-memory
+claude
 ```
 
 In Claude Code:
@@ -86,7 +86,7 @@ In Claude Code:
 ```
 
 ```bash
-claude -c --plugin-dir ./project-memory
+claude -c
 ```
 
 ```
@@ -104,7 +104,7 @@ Fasse inbox/2026-10-12-steering.md in drei Stichpunkten zusammen.
 ```
 
 ```bash
-claude -c --plugin-dir ./project-memory
+claude -c
 ```
 
 *„Für den Rest nehmen wir die Original-Modelle, die sind für Agenten-Läufe am stärksten.“*
@@ -119,7 +119,7 @@ Copilot-Chat öffnen, Modellauswahl aufklappen: oben die Copilot-Modelle (u. a. 
 |---|---|
 | `/provider` unbekannt | Claude im falschen Ordner gestartet. `/provider` ist ein Projekt-Befehl und existiert nur in `~/agent-demo` (nach `demo/setup-workspace.sh`) und im Repo-Ordner ab Branch `demo/01-ai-hub`. In VS Code den passenden Ordner öffnen. Notlösung im Terminal: `project-memory/scripts/provider.sh adesso-hub` |
 | Nach `/exit` + `claude -c` noch alter Provider | Vertrauensdialog nicht bestätigt (Hook lief nicht) → im Terminal `project-memory/scripts/provider.sh adesso-hub`, dann `claude -c` |
-| `/status` zeigt trotzdem den Hub nach `/provider anthropic` | Alias aktiv → `command claude -c --plugin-dir ./project-memory` |
+| `/status` zeigt trotzdem den Hub nach `/provider anthropic` | Alias aktiv → `command claude -c` |
 | `No AI Hub key found` | `scripts/provider.sh set-key` |
 | Hub antwortet nicht | Teil überspringen, Screenshot zeigen, weiter mit Schritt 02 |
 | VS Code nutzt alten Provider | neue Claude-Session öffnen |
