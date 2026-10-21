@@ -45,6 +45,8 @@ claude --plugin-dir ./project-memory
 
 ## 01 · AI Hub zeigen und umschalten
 
+`/provider` ist ein Projekt-Befehl. Er erscheint nur, wenn Claude in `~/agent-demo` (oder im Repo-Ordner) gestartet wurde. In VS Code also den Ordner `~/agent-demo` öffnen.
+
 **Claude Code**
 
 ```
