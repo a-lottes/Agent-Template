@@ -39,7 +39,10 @@ Run each subagent in the foreground (`run_in_background: false`) and wait for it
    ```
 
 5. Append the processed file names with today's date to `memory/processed.md`.
-6. Summarise what was added, what was rejected and why, and list open questions.
+6. Save every memory file as PDF next to its Markdown (`actions.md` + `actions.pdf`, …):
+   `python3 ${CLAUDE_SKILL_DIR}/scripts/md_to_pdf.py memory`
+   Markdown stays the source of truth; never edit the PDFs.
+7. Summarise what was added, what was rejected and why, and list open questions.
 
 ## Rules
 

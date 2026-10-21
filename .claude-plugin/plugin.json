@@ -1,6 +1,6 @@
 {
   "name": "project-memory",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Turns meeting notes and project documents into decisions, actions and risks, with review and guardrails.",
   "author": { "name": "Andreas Lottes" },
   "keywords": ["meetings", "project-management", "agents", "regulated"]
