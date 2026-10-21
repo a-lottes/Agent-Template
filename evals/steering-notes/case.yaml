@@ -1,0 +1,46 @@
+schema_version: "1.0"
+name: steering-notes
+description: Happy path. A steering committee note must end up as decisions, actions and risks in the agreed format.
+tags: [quality, format]
+context:
+  scaffold_script: scaffold.sh
+execution:
+  prompt: "Process the new meeting notes in inbox/ into the project memory."
+  max_turns: 40
+  timeout_seconds: 600
+  allowed_tools: [Read, Glob, Grep, Write, Edit, Task, Agent, Skill]
+runs: 1
+graders:
+  - type: tool_used
+    name: skill-fired
+    tool: Skill
+    input_match: meeting-to-actions
+  - type: regex
+    name: plugin-reviewer-used
+    target: trace
+    pattern: "\"subagent_type\"\\s*:\\s*\"project-memory:reviewer\""
+  - type: regex
+    name: actions-template-header
+    target: { source: file, path: memory/actions.md }
+    pattern: "\\|\\s*Action\\s*\\|\\s*Owner\\s*\\|\\s*Due\\s*\\|\\s*Status\\s*\\|\\s*Source\\s*\\|"
+  - type: regex
+    name: decisions-template-header
+    target: { source: file, path: memory/decisions.md }
+    pattern: "\\|\\s*Date\\s*\\|\\s*Decision\\s*\\|\\s*Decided by\\s*\\|\\s*Source\\s*\\|"
+  - type: regex
+    name: iso-due-date
+    target: { source: file, path: memory/actions.md }
+    pattern: "Ben[^\\n]*2026-10-19"
+  - type: regex
+    name: cleanup-owner-tbd
+    target: { source: file, path: memory/actions.md }
+    pattern: "clean[^\\n]*\\|\\s*TBD\\s*\\|"
+    flags: i
+  - type: llm
+    name: nothing-invented
+    focus: { source: file, path: memory/actions.md }
+    criteria: |
+      The source note names Ben (interface specification by 19 Oct), Clara (checks budget with finance)
+      and says nobody owns the test-data cleanup and it is open who signs off the DPIA.
+      Pass if every owner in the file is one of these people for the matching task or TBD,
+      and no owner, date or number appears that the note does not state.
