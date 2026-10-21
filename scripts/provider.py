@@ -28,6 +28,7 @@ REPO = Path(__file__).resolve().parent.parent
 PROFILES = REPO / "providers"
 DEFAULT_WS = Path(os.environ.get("DEMO_WS") or
                   (Path.cwd() if (Path.cwd() / ".claude").is_dir() else Path.home() / "agent-demo"))
+PROVIDER_KEYS = ("env", "apiKeyHelper", "model")
 ALIAS_KEYS = ("ANTHROPIC_MODEL", "ANTHROPIC_DEFAULT_OPUS_MODEL",
               "ANTHROPIC_DEFAULT_SONNET_MODEL", "ANTHROPIC_DEFAULT_HAIKU_MODEL")
 
@@ -91,9 +92,14 @@ def cmd_use(args) -> None:
         sys.exit("usage: provider.sh use <profile> [workspace] [--next]")
     settings = load_profile(args[0])
     ws = Path(args[1]).expanduser() if len(args) > 1 else DEFAULT_WS
-    target = ws / ".claude" / ("settings.local.json.next" if staged else "settings.local.json")
+    active = ws / ".claude" / "settings.local.json"
+    target = active.with_name("settings.local.json.next") if staged else active
     target.parent.mkdir(parents=True, exist_ok=True)
-    target.write_text(json.dumps(settings, indent=2) + "\n")
+    # Replace only the provider keys; keep everything else (e.g. the plugin registration).
+    merged = {k: v for k, v in (json.loads(active.read_text()) if active.exists() else {}).items()
+              if k not in PROVIDER_KEYS}
+    merged.update(settings)
+    target.write_text(json.dumps(merged, indent=2) + "\n")
     print(f"Wrote {target}\n{describe(settings)}")
     if staged:
         print("\nStaged. Takes effect on /exit; then `claude -c` continues this conversation on the new provider.")
