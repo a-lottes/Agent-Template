@@ -53,13 +53,16 @@ cp "$REPO"/examples/later/*.md "$WS/later/"
 
 # Project settings shared by all providers. The provider itself lives in
 # .claude/settings.local.json (see scripts/provider.sh from branch demo/01-ai-hub on).
-# allow: the skill's own scripts run without a prompt (PDF export, GitHub issues).
+# allow: writes to memory/ and the skill's own scripts run without a prompt (PDF export,
+# GitHub issues). The plugin's guard hook still blocks every write outside memory/.
 # SessionEnd: a provider switch requested with /provider takes effect when the session ends.
 SCRIPTS="$WS/project-memory/skills/meeting-to-actions/scripts"
 cat > "$WS/.claude/settings.json" <<EOF
 {
   "permissions": {
     "allow": [
+      "Edit(./memory/**)",
+      "Write(./memory/**)",
       "Bash(python3 $SCRIPTS/md_to_pdf.py *)",
       "Bash(python3 $SCRIPTS/create_issues.py *)",
       "Bash(python3 project-memory/skills/meeting-to-actions/scripts/md_to_pdf.py *)",
