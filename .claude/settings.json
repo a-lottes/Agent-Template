@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": ["Bash(./scripts/provider.sh *)"]
+  },
+  "hooks": {
+    "SessionEnd": [
+      { "hooks": [ { "type": "command", "command": "cd \"$CLAUDE_PROJECT_DIR\" && [ -f .claude/settings.local.json.next ] && mv .claude/settings.local.json.next .claude/settings.local.json || true" } ] }
+    ]
+  }
+}
