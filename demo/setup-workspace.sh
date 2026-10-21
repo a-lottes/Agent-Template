@@ -117,8 +117,5 @@ else
   echo "  provider: (none set, uses your global Claude Code settings)"
 fi
 echo
-if [ -f "$WS/project-memory/.claude-plugin/marketplace.json" ]; then
-  echo "Start: cd $WS && claude"
-else
-  echo "Start: cd $WS && claude --plugin-dir ./project-memory"
-fi
+echo "Start: cd $WS && claude"
+[ -f "$WS/project-memory/.claude-plugin/marketplace.json" ] || echo "       (the plugin is loaded automatically from branch demo/02-skill-use on)"
