@@ -16,6 +16,18 @@ mkdir -p "$WS"/{inbox,later,memory,.claude}
 # symlink as outside the project and would ask before every script run.
 [ -L "$WS/project-memory" ] && rm "$WS/project-memory"
 rsync -a --delete --exclude .git --exclude 'evals/results' "$REPO/" "$WS/project-memory/"
+
+# CLAUDE.md is configuration (not memory), so it follows the branch, also with --plugin-only.
+# Target repo for GitHub issues (step 04): DEMO_GH_REPO=owner/name demo/setup-workspace.sh
+# Without DEMO_GH_REPO, a repo set earlier in the workspace CLAUDE.md is kept.
+OLD_REPO_LINE="$(grep -s '^GitHub repo for action items:' "$WS/CLAUDE.md" | grep -v '<owner/repo>' || true)"
+cp "$REPO/examples/CLAUDE.md" "$WS/CLAUDE.md"
+if [ -n "${DEMO_GH_REPO:-}" ]; then
+  sed -i.bak "s|<owner/repo>|$DEMO_GH_REPO|" "$WS/CLAUDE.md" && rm -f "$WS/CLAUDE.md.bak"
+elif [ -n "$OLD_REPO_LINE" ]; then
+  sed -i.bak "s|^GitHub repo for action items:.*|$OLD_REPO_LINE|" "$WS/CLAUDE.md" && rm -f "$WS/CLAUDE.md.bak"
+fi
+
 if [ "${1:-}" = "--plugin-only" ]; then
   echo "Plugin refreshed from branch $(git -C "$REPO" branch --show-current): $WS/project-memory"
   exit 0
@@ -26,11 +38,11 @@ find "${WS:?}/memory" -mindepth 1 -delete
 find "${WS:?}/inbox" "${WS:?}/later" -mindepth 1 -delete
 cp "$REPO"/examples/inbox/*.md "$WS/inbox/"
 cp "$REPO"/examples/later/*.md "$WS/later/"
-cp "$REPO/examples/CLAUDE.md" "$WS/CLAUDE.md"
 
 # Project settings shared by all providers. The provider itself lives in
 # .claude/settings.local.json (see scripts/provider.sh from branch demo/01-ai-hub on).
 # allow: the skill's own scripts run without a prompt (PDF export, GitHub issues).
+# SessionEnd: a provider switch requested with /provider takes effect when the session ends.
 SCRIPTS="$WS/project-memory/skills/meeting-to-actions/scripts"
 cat > "$WS/.claude/settings.json" <<EOF
 {
@@ -41,16 +53,24 @@ cat > "$WS/.claude/settings.json" <<EOF
       "Bash(python3 project-memory/skills/meeting-to-actions/scripts/md_to_pdf.py *)",
       "Bash(python3 project-memory/skills/meeting-to-actions/scripts/create_issues.py *)",
       "Bash(python3 ./project-memory/skills/meeting-to-actions/scripts/md_to_pdf.py *)",
-      "Bash(python3 ./project-memory/skills/meeting-to-actions/scripts/create_issues.py *)"
+      "Bash(python3 ./project-memory/skills/meeting-to-actions/scripts/create_issues.py *)",
+      "Bash(./project-memory/scripts/provider.sh *)"
     ],
     "deny": ["WebFetch", "WebSearch"]
+  },
+  "hooks": {
+    "SessionEnd": [
+      { "hooks": [ { "type": "command", "command": "cd \"\$CLAUDE_PROJECT_DIR\" && [ -f .claude/settings.local.json.next ] && mv .claude/settings.local.json.next .claude/settings.local.json || true" } ] }
+    ]
   }
 }
 EOF
 
 # Provider switching inside Claude Code (/provider) and ready-made --settings files.
-mkdir -p "$WS/.claude/commands"
-cp "$REPO/demo/workspace/.claude/commands/"*.md "$WS/.claude/commands/"
+if [ -d "$REPO/demo/workspace/.claude/commands" ]; then
+  mkdir -p "$WS/.claude/commands"
+  cp "$REPO/demo/workspace/.claude/commands/"*.md "$WS/.claude/commands/"
+fi
 if [ -f "$REPO/scripts/provider.py" ]; then
   python3 "$REPO/scripts/provider.py" files "$WS/.claude/providers" >/dev/null
   # Default for the demo: original Anthropic models (the hub is shown, not used throughout).
