@@ -19,13 +19,11 @@ rsync -a --delete --exclude .git --exclude 'evals/results' "$REPO/" "$WS/project
 
 # CLAUDE.md is configuration (not memory), so it follows the branch, also with --plugin-only.
 # Target repo for GitHub issues (step 04): DEMO_GH_REPO=owner/name demo/setup-workspace.sh
-# Without DEMO_GH_REPO, a repo set earlier in the workspace CLAUDE.md is kept.
-OLD_REPO_LINE="$(grep -s '^GitHub repo for action items:' "$WS/CLAUDE.md" | grep -v '<owner/repo>' || true)"
+# It is remembered in .claude/gh-repo, so it can be given once at any step.
+[ -n "${DEMO_GH_REPO:-}" ] && echo "$DEMO_GH_REPO" > "$WS/.claude/gh-repo"
 cp "$REPO/examples/CLAUDE.md" "$WS/CLAUDE.md"
-if [ -n "${DEMO_GH_REPO:-}" ]; then
-  sed -i.bak "s|<owner/repo>|$DEMO_GH_REPO|" "$WS/CLAUDE.md" && rm -f "$WS/CLAUDE.md.bak"
-elif [ -n "$OLD_REPO_LINE" ]; then
-  sed -i.bak "s|^GitHub repo for action items:.*|$OLD_REPO_LINE|" "$WS/CLAUDE.md" && rm -f "$WS/CLAUDE.md.bak"
+if [ -s "$WS/.claude/gh-repo" ]; then
+  sed -i.bak "s|<owner/repo>|$(cat "$WS/.claude/gh-repo")|" "$WS/CLAUDE.md" && rm -f "$WS/CLAUDE.md.bak"
 fi
 
 if [ "${1:-}" = "--plugin-only" ]; then
