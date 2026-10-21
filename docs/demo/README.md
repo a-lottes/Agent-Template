@@ -12,6 +12,8 @@ Geht live etwas schief, springt ihr einfach auf den nächsten Branch.
 | `demo/04-skill-github` | Skill anpassen: Aufgaben als GitHub-Issues per `gh` | [ABLAUF](04-skill-github/ABLAUF.md) | [VISUELL](04-skill-github/VISUELL.md) |
 | `demo/05-skill-check` | Validieren und kurz evaluieren | [ABLAUF](05-skill-check/ABLAUF.md) | [VISUELL](05-skill-check/VISUELL.md) |
 
+**Spickzettel mit allen Befehlen und Prompts zum Copy-Pasten:** [PROMPTS.md](PROMPTS.md)
+
 Alle Dokumente liegen in **jedem** `demo/*`-Branch und auf `main`. Ihr könnt also von überall aus lesen, egal welcher Schritt gerade ausgecheckt ist.
 
 ## Springen, wenn live etwas hakt
