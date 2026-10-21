@@ -61,7 +61,7 @@ Oder in VS Code `SKILL.md` öffnen und Schritt 6 zeigen. Kurz in `scripts/md_to_
 
 ```bash
 cd ~/Documents/projects/Agent-Template && demo/setup-workspace.sh
-cd ~/agent-demo && claude --plugin-dir ./project-memory
+cd ~/agent-demo && claude
 ```
 
 Prompt:
