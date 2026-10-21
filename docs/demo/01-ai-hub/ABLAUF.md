@@ -30,7 +30,9 @@ Der Hub wird **gezeigt**, nicht durchgängig benutzt. Ab Schritt 02 läuft alles
 | Einmalig, ohne umzuschalten | `claude --settings .claude/providers/adesso-hub.json` | „nur mal kurz zeigen“ |
 | VS Code ohne Terminal | *Terminal → Run Task… → Provider: …* | für Kolleg:innen, die nicht tippen wollen |
 
-Warum ein Neustart nötig ist: Der Provider (Adresse und Key) wird beim Start von Claude Code festgelegt. `/model` wechselt nur das Modell **innerhalb** eines Providers. `claude -c` setzt dasselbe Gespräch fort, getestet: Die Session-ID bleibt gleich, Claude kennt danach den bisherigen Verlauf.
+Warum ein Neustart nötig ist: Der Provider (Adresse und Key) gehört zur Sitzung. `/model` wechselt nur das Modell **innerhalb** eines Providers. `claude -c` setzt dasselbe Gespräch fort, getestet: Die Session-ID bleibt gleich, Claude kennt danach den bisherigen Verlauf.
+
+So funktioniert `/provider` technisch: Der Befehl **merkt den Wechsel nur vor** (`.claude/settings.local.json.next`) und bestätigt noch auf dem alten Provider. Beim `/exit` aktiviert ein `SessionEnd`-Hook (in `.claude/settings.json`, angelegt von `setup-workspace.sh`) die neue Datei. Hintergrund aus der Generalprobe: Schreibt man die Settings sofort, lädt Claude Code sie noch während der laufenden Antwort nach und schickt diese mit dem alten Modell an den neuen Provider. Das ergibt eine Fehlermeldung.
 
 Mehrere Provider in **einer** Settings-Datei gleichzeitig gehen nicht: Claude Code kennt pro Sitzung genau eine `ANTHROPIC_BASE_URL`. Deshalb ein Profil pro Provider.
 
@@ -116,6 +118,7 @@ Copilot-Chat öffnen, Modellauswahl aufklappen: oben die Copilot-Modelle (u. a. 
 | Problem | Ausweg |
 |---|---|
 | `/provider` unbekannt | Workspace nicht aktuell → `demo/setup-workspace.sh`, oder im Terminal `project-memory/scripts/provider.sh adesso-hub` |
+| Nach `/exit` + `claude -c` noch alter Provider | Vertrauensdialog nicht bestätigt (Hook lief nicht) → im Terminal `project-memory/scripts/provider.sh adesso-hub`, dann `claude -c` |
 | `/status` zeigt trotzdem den Hub nach `/provider anthropic` | Alias aktiv → `command claude -c --plugin-dir ./project-memory` |
 | `No AI Hub key found` | `scripts/provider.sh set-key` |
 | Hub antwortet nicht | Teil überspringen, Screenshot zeigen, weiter mit Schritt 02 |

@@ -44,9 +44,10 @@ sequenceDiagram
 
     Jan->>CC: /provider adesso-hub
     CC->>P: Skript ausführen
-    P->>S: Profil „adesso-hub“ schreiben
+    P->>S: Profil „adesso-hub“ vormerken (.next)
     P-->>Jan: Tabelle: Hub · DeepSeek · Qwen
     Jan->>CC: /exit
+    CC->>S: SessionEnd-Hook aktiviert das Profil
     Jan->>CC: claude -c
     Note over CC: gleiches Gespräch,<br/>neuer Provider
     Jan->>CC: /status → AI Hub ✅
@@ -61,7 +62,7 @@ flowchart LR
     style HC fill:#e8f1ff,stroke:#1f6feb,stroke-dasharray: 5 5
 ```
 
-> Warum neu starten? Adresse und Key gelten pro Sitzung. `claude -c` setzt das Gespräch einfach fort.
+> Warum neu starten? Adresse und Key gelten pro Sitzung. `/provider` merkt den Wechsel vor, beim `/exit` wird er aktiv, `claude -c` setzt das Gespräch einfach fort.
 
 ## Drei Namen, beliebige Modelle
 
