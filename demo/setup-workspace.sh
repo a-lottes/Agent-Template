@@ -26,6 +26,20 @@ if [ -s "$WS/.claude/gh-repo" ]; then
   sed -i.bak "s|<owner/repo>|$(cat "$WS/.claude/gh-repo")|" "$WS/CLAUDE.md" && rm -f "$WS/CLAUDE.md.bak"
 fi
 
+# Default for the demo: original Anthropic models (the hub is shown, not used throughout).
+if [ -f "$REPO/scripts/provider.py" ] && [ ! -f "$WS/.claude/settings.local.json" ]; then
+  python3 "$REPO/scripts/provider.py" use anthropic "$WS" >/dev/null
+fi
+
+# Register the plugin for this workspace (local scope), so plain `claude` and the VS Code
+# panel load it without --plugin-dir. It loads in place from $WS/project-memory.
+if [ -f "$WS/project-memory/.claude-plugin/marketplace.json" ]; then
+  CLAUDE_BIN="$(command -v claude || echo "$HOME/.local/bin/claude")"
+  (cd "$WS" && "$CLAUDE_BIN" plugin marketplace add ./project-memory --scope local >/dev/null 2>&1 \
+            && "$CLAUDE_BIN" plugin install project-memory@adesso-agent-demo --scope local >/dev/null 2>&1) \
+    || echo "  note: plugin registration failed, start with: claude --plugin-dir ./project-memory"
+fi
+
 if [ "${1:-}" = "--plugin-only" ]; then
   echo "Plugin refreshed from branch $(git -C "$REPO" branch --show-current): $WS/project-memory"
   exit 0
@@ -71,8 +85,6 @@ if [ -d "$REPO/demo/workspace/.claude/commands" ]; then
 fi
 if [ -f "$REPO/scripts/provider.py" ]; then
   python3 "$REPO/scripts/provider.py" files "$WS/.claude/providers" >/dev/null
-  # Default for the demo: original Anthropic models (the hub is shown, not used throughout).
-  [ -f "$WS/.claude/settings.local.json" ] || python3 "$REPO/scripts/provider.py" use anthropic "$WS" >/dev/null
 fi
 
 # One-click provider switching in VS Code: Terminal > Run Task...
@@ -102,4 +114,8 @@ else
   echo "  provider: (none set, uses your global Claude Code settings)"
 fi
 echo
-echo "Start: cd $WS && claude --plugin-dir ./project-memory"
+if [ -f "$WS/project-memory/.claude-plugin/marketplace.json" ]; then
+  echo "Start: cd $WS && claude"
+else
+  echo "Start: cd $WS && claude --plugin-dir ./project-memory"
+fi
