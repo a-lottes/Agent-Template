@@ -13,8 +13,8 @@ Branch: `demo/04-skill-github` · baut auf `demo/03-skill-pdf` auf · Dauer live
 | `skills/meeting-to-actions/SKILL.md` | **neuer Abschnitt „Later: action items as GitHub issues“** + Auslöser in der Beschreibung. Version 0.4.0 |
 | `skills/meeting-to-actions/scripts/create_issues.py` | liest `memory/actions.md`, legt per `gh issue create` Issues an, schreibt `#<nr>` in die Status-Spalte |
 | `commands/create-issues.md` | expliziter Befehl `/project-memory:create-issues` |
-| `examples/CLAUDE.md` | neue Zeile `GitHub repo for action items: <owner/repo>` |
-| `demo/setup-workspace.sh` | setzt das Ziel-Repo aus `DEMO_GH_REPO` in die Workspace-CLAUDE.md |
+| `examples/CLAUDE.md` | Zeile `GitHub repo for action items: <owner/repo>` (steht schon ab Schritt 00 drin, damit sie live nicht „neu“ auftaucht) |
+| `demo/setup-workspace.sh` | setzt das Ziel-Repo aus `DEMO_GH_REPO` in die Workspace-CLAUDE.md und merkt es sich |
 
 Die Skill-Änderung, die ihr live zeigt:
 
@@ -80,11 +80,11 @@ Drei Dinge betonen: *nur auf Wunsch*, *erst Vorschau*, *keine Duplikate*.
 cd ~/Documents/projects/Agent-Template && DEMO_GH_REPO=a-lottes/Agent-Template demo/setup-workspace.sh --plugin-only
 ```
 
-Hinweis: `--plugin-only` behält `memory/` aus Schritt 03. Das Ziel-Repo muss dann schon in `~/agent-demo/CLAUDE.md` stehen (einmal bei der Vorbereitung gesetzt), sonst die Zeile dort per Hand eintragen.
+Hinweis: `--plugin-only` behält `memory/` aus Schritt 03. Das Ziel-Repo merkt sich der Workspace (`.claude/gh-repo`), sobald es einmal mit `DEMO_GH_REPO=…` gesetzt wurde. Die Zeile `GitHub repo for action items` steht ab Schritt 00 in der `CLAUDE.md`.
 
 ### 4 · Issues anlegen (90 s)
 
-In Claude Code (gleiche Sitzung wie Schritt 03 oder neu mit `claude -c --plugin-dir ./project-memory`):
+In einer **neuen** Claude-Code-Sitzung (`/exit`, dann `claude --plugin-dir ./project-memory`). Die Ergebnisse aus Schritt 03 liegen ja in `memory/`. Hintergrund: Setzt man das alte Gespräch mit `-c` fort, kann Claude geänderte Projektdateien misstrauisch hinterfragen. Das ist gutes Verhalten, kostet live aber Zeit:
 
 ```
 Lege für die offenen Aufgaben GitHub-Issues an.
