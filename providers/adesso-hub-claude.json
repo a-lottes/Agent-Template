@@ -1,0 +1,15 @@
+{
+  "env": {
+    "DEMO_PROVIDER": "adesso-hub-claude",
+    "ANTHROPIC_BASE_URL": "__HUB_URL__",
+    "ANTHROPIC_AUTH_TOKEN": "",
+    "ANTHROPIC_API_KEY": "",
+    "ANTHROPIC_MODEL": "claude-sonnet-5",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-opus-5",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-5",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude-haiku-5",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
+  },
+  "apiKeyHelper": "__REPO__/scripts/hub-key.sh",
+  "model": "sonnet"
+}

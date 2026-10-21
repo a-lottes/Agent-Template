@@ -1,0 +1,15 @@
+{
+  "env": {
+    "DEMO_PROVIDER": "adesso-hub",
+    "ANTHROPIC_BASE_URL": "__HUB_URL__",
+    "ANTHROPIC_AUTH_TOKEN": "",
+    "ANTHROPIC_API_KEY": "",
+    "ANTHROPIC_MODEL": "deepseek-v4-flash-sovereign",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "deepseek-v4-flash-sovereign",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "deepseek-v4-flash-sovereign",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "qwen-3.6-35b-sovereign",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
+  },
+  "apiKeyHelper": "__REPO__/scripts/hub-key.sh",
+  "model": "sonnet"
+}

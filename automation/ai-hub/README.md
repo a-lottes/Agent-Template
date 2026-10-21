@@ -29,3 +29,15 @@ setx ANTHROPIC_AUTH_TOKEN "<your-ai-hub-key>"
 curl -s https://<ai-hub-host>/v1/models -H "Authorization: Bearer <your-ai-hub-key>"
 claude          # then /status and /model
 ```
+
+## Switchable profiles (live demo)
+
+Instead of editing settings by hand, use the profiles in `providers/` and switch per workspace:
+
+```bash
+scripts/provider.sh set-key            # once: key into the Keychain
+scripts/provider.sh use adesso-hub     # or: anthropic, adesso-hub-claude
+scripts/model_check.py                 # which hub models can call tools?
+```
+
+See `docs/demo/01-ai-hub/`.

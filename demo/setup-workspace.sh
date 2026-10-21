@@ -48,6 +48,32 @@ cat > "$WS/.claude/settings.json" <<EOF
 }
 EOF
 
+# Provider switching inside Claude Code (/provider) and ready-made --settings files.
+mkdir -p "$WS/.claude/commands"
+cp "$REPO/demo/workspace/.claude/commands/"*.md "$WS/.claude/commands/"
+if [ -f "$REPO/scripts/provider.py" ]; then
+  python3 "$REPO/scripts/provider.py" files "$WS/.claude/providers" >/dev/null
+  # Default for the demo: original Anthropic models (the hub is shown, not used throughout).
+  [ -f "$WS/.claude/settings.local.json" ] || python3 "$REPO/scripts/provider.py" use anthropic "$WS" >/dev/null
+fi
+
+# One-click provider switching in VS Code: Terminal > Run Task...
+if [ -f "$REPO/scripts/provider.sh" ]; then
+  mkdir -p "$WS/.vscode"
+  cat > "$WS/.vscode/tasks.json" <<'EOF'
+{
+  "version": "2.0.0",
+  "tasks": [
+    { "label": "Provider: adesso AI Hub (souverän)", "type": "shell", "command": "${workspaceFolder}/project-memory/scripts/provider.sh use adesso-hub ${workspaceFolder}", "problemMatcher": [] },
+    { "label": "Provider: adesso AI Hub (Claude)", "type": "shell", "command": "${workspaceFolder}/project-memory/scripts/provider.sh use adesso-hub-claude ${workspaceFolder}", "problemMatcher": [] },
+    { "label": "Provider: Anthropic (Original)", "type": "shell", "command": "${workspaceFolder}/project-memory/scripts/provider.sh use anthropic ${workspaceFolder}", "problemMatcher": [] },
+    { "label": "Provider: Status", "type": "shell", "command": "${workspaceFolder}/project-memory/scripts/provider.sh status ${workspaceFolder}", "problemMatcher": [] },
+    { "label": "AI Hub: Modell-Check", "type": "shell", "command": "${workspaceFolder}/project-memory/scripts/model_check.py", "problemMatcher": [] }
+  ]
+}
+EOF
+fi
+
 echo "Workspace ready: $WS"
 echo "  branch:   $(git -C "$REPO" branch --show-current)"
 echo "  inbox:    $(ls "$WS/inbox" | tr '\n' ' ')"
