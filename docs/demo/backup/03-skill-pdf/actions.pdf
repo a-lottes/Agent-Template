@@ -1,0 +1,89 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Length 2653 >>
+stream
+BT 0.45 g /F1 8 Tf 50.0 811.9 Td (Project Memory · Actions) Tj ET
+BT 0.45 g /F1 8 Tf 485.3 811.9 Td (2026-10-21) Tj ET
+BT 0.0 g /F2 16 Tf 50.0 762.9 Td (Actions) Tj ET
+0.92 g 50.0 738.9 142.9 16.0 re f
+0.7 G 0.5 w 50.0 738.9 142.9 16.0 re S
+BT 0.0 g /F2 8 Tf 53.0 743.9 Td (Action) Tj ET
+0.92 g 192.9 738.9 45.2 16.0 re f
+0.7 G 0.5 w 192.9 738.9 45.2 16.0 re S
+BT 0.0 g /F2 8 Tf 195.9 743.9 Td (Owner) Tj ET
+0.92 g 238.0 738.9 70.1 16.0 re f
+0.7 G 0.5 w 238.0 738.9 70.1 16.0 re S
+BT 0.0 g /F2 8 Tf 241.0 743.9 Td (Due) Tj ET
+0.92 g 308.1 738.9 46.6 16.0 re f
+0.7 G 0.5 w 308.1 738.9 46.6 16.0 re S
+BT 0.0 g /F2 8 Tf 311.1 743.9 Td (Status) Tj ET
+0.92 g 354.7 738.9 190.6 16.0 re f
+0.7 G 0.5 w 354.7 738.9 190.6 16.0 re S
+BT 0.0 g /F2 8 Tf 357.7 743.9 Td (Source) Tj ET
+0.7 G 0.5 w 50.0 712.9 142.9 26.0 re S
+BT 0.0 g /F1 8 Tf 53.0 727.9 Td (Deliver the interface specification) Tj ET
+0.7 G 0.5 w 192.9 712.9 45.2 26.0 re S
+BT 0.0 g /F1 8 Tf 195.9 727.9 Td (Ben) Tj ET
+0.7 G 0.5 w 238.0 712.9 70.1 26.0 re S
+BT 0.0 g /F1 8 Tf 241.0 727.9 Td (2026-10-19) Tj ET
+0.7 G 0.5 w 308.1 712.9 46.6 26.0 re S
+BT 0.0 g /F1 8 Tf 311.1 727.9 Td (open) Tj ET
+0.7 G 0.5 w 354.7 712.9 190.6 26.0 re S
+BT 0.0 g /F1 8 Tf 357.7 727.9 Td (2026-10-12-steering.md: "Ben will deliver the) Tj ET
+BT 0.0 g /F1 8 Tf 357.7 717.9 Td (interface specification by 19 Oct.") Tj ET
+0.7 G 0.5 w 50.0 676.9 142.9 36.0 re S
+BT 0.0 g /F1 8 Tf 53.0 701.9 Td (Check budget impact for the extra two) Tj ET
+BT 0.0 g /F1 8 Tf 53.0 691.9 Td (weeks with finance) Tj ET
+0.7 G 0.5 w 192.9 676.9 45.2 36.0 re S
+BT 0.0 g /F1 8 Tf 195.9 701.9 Td (Clara) Tj ET
+0.7 G 0.5 w 238.0 676.9 70.1 36.0 re S
+BT 0.0 g /F1 8 Tf 241.0 701.9 Td (TBD) Tj ET
+0.7 G 0.5 w 308.1 676.9 46.6 36.0 re S
+BT 0.0 g /F1 8 Tf 311.1 701.9 Td (open) Tj ET
+0.7 G 0.5 w 354.7 676.9 190.6 36.0 re S
+BT 0.0 g /F1 8 Tf 357.7 701.9 Td (2026-10-12-steering.md: "Anna said the budget for) Tj ET
+BT 0.0 g /F1 8 Tf 357.7 691.9 Td (the extra two weeks is still open; Clara will check) Tj ET
+BT 0.0 g /F1 8 Tf 357.7 681.9 Td (with finance.") Tj ET
+0.7 G 0.5 w 50.0 650.9 142.9 26.0 re S
+BT 0.0 g /F1 8 Tf 53.0 665.9 Td (Run a load test before go-live) Tj ET
+0.7 G 0.5 w 192.9 650.9 45.2 26.0 re S
+BT 0.0 g /F1 8 Tf 195.9 665.9 Td (TBD) Tj ET
+0.7 G 0.5 w 238.0 650.9 70.1 26.0 re S
+BT 0.0 g /F1 8 Tf 241.0 665.9 Td (TBD) Tj ET
+0.7 G 0.5 w 308.1 650.9 46.6 26.0 re S
+BT 0.0 g /F1 8 Tf 311.1 665.9 Td (open) Tj ET
+0.7 G 0.5 w 354.7 650.9 190.6 26.0 re S
+BT 0.0 g /F1 8 Tf 357.7 665.9 Td (2026-10-12-steering.md: "Ben wants a load test) Tj ET
+BT 0.0 g /F1 8 Tf 357.7 655.9 Td (before go-live.") Tj ET
+BT 0.45 g /F1 8 Tf 282.6 30 Td (1 / 1) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 5 0 R >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000212 00000 n 
+0000000314 00000 n 
+0000003019 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+3161
+%%EOF
