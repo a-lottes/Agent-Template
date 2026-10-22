@@ -1,7 +1,8 @@
 #!/bin/bash
 # Validate and evaluate the plugin's skill against a provider profile.
 #
-#   scripts/eval.sh anthropic --case no-trigger   # short live run (seconds)
+#   scripts/eval.sh adesso-hub --case no-trigger  # short live run (seconds, sovereign)
+#   scripts/eval.sh anthropic --case no-trigger   # on machines without a global hub config
 #   scripts/eval.sh                               # anthropic, all cases, 1 run each
 #   scripts/eval.sh adesso-hub                    # same suite on the AI Hub
 #   scripts/eval.sh anthropic --runs 3            # for real decisions: more runs
@@ -24,7 +25,11 @@ echo "== 1/2 validate (structure)"
 
 echo
 echo "== 2/2 eval (behaviour) · profile: $PROFILE · model: ${ANTHROPIC_MODEL:-Anthropic default}"
-exec "$CLAUDE_BIN" plugin eval . \
+# The eval sandbox only knows Claude model names; pass the profile's model explicitly.
+MODEL_ARGS=()
+[ -n "${ANTHROPIC_MODEL:-}" ] && MODEL_ARGS=(--model "$ANTHROPIC_MODEL" --judge-model "$ANTHROPIC_MODEL")
+
+exec "$CLAUDE_BIN" plugin eval . "${MODEL_ARGS[@]}" \
   --scaffold --trust-plugin \
   --allow-tools Write Edit \
   --ablation none --runs 1 -j 4 \
