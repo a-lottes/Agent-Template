@@ -221,7 +221,11 @@ Weil Claude den Code live selbst schreibt, stehen bekannte Stolperfallen ausdrü
 6. **`skill_check.py`** bekommt eine Allow-Regel für `md_to_pdf.py` und `--add-dir`, sonst hängt der PDF-Export an einer Rückfrage.
 7. **Jeder Bauschritt prüft am Ende `git status`**, damit nichts uncommittet liegen bleibt.
 
-**Zeitbedarf** laut Generalprobe: Schritt 02 ca. 40 s, Schritt 03 ca. 2–3 min, Schritt 04 ca. 1 min, Schritt 05 ca. 1,5 min. Ein Demo-Skill-Lauf dauert ca. 70–100 s.
+8. **Freigaben auch für `python3 -I …`**: Claude ruft Skripte manchmal im isolierten Modus auf. `setup-workspace.sh` erlaubt beide Varianten.
+
+**Zeitbedarf** laut zweiter Generalprobe (22.10.2026, mit den Prompt-Dateien): Schritt 0 ca. 10 s, Schritt 02 ca. 40 s, Schritt 03 ca. 2 min, Schritt 04 ca. 50 s, Schritt 05 ca. 50 s. Ein Demo-Skill-Lauf dauert ca. 60–75 s, der Kurz-Eval ca. 3 s.
+
+**Im Bau fragt Claude interaktiv gelegentlich nach Freigaben** (zusammengesetzte Shell-Befehle). Einfach zustimmen, das ist im Repo normal.
 
 ---
 
