@@ -235,7 +235,7 @@ cd ~/Documents/projects/Agent-Template
 git switch demo/05-skill-check
 claude plugin validate --strict skills
 claude plugin validate --strict commands
-scripts/eval.sh anthropic --case no-trigger      # ca. 5 s
+scripts/eval.sh adesso-hub --case no-trigger      # ca. 5 s
 ```
 
 Nur erwähnen (Screenshot aus der Generalprobe): `scripts/skill_check.py anthropic` → 9/9.
