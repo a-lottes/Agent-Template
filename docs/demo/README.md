@@ -12,7 +12,7 @@ Geht live etwas schief, springt ihr einfach auf den nächsten Branch.
 | `demo/04-skill-github` | Skill anpassen: Aufgaben als GitHub-Issues per `gh` | [ABLAUF](04-skill-github/ABLAUF.md) | [VISUELL](04-skill-github/VISUELL.md) |
 | `demo/05-skill-check` | Validieren und kurz evaluieren | [ABLAUF](05-skill-check/ABLAUF.md) | [VISUELL](05-skill-check/VISUELL.md) |
 
-**Live-Plan (empfohlen): alles live auf einem Branch `demo/live` bauen, ohne Branch-Wechsel und Merges:** [LIVE-PLAN.md](LIVE-PLAN.md). Die `demo/0X-*`-Branches dienen dabei als Backup und Referenz.
+**Live-Plan (empfohlen): alles live auf einem Branch `demo/live` bauen, ohne Branch-Wechsel und Merges:** [LIVE-PLAN.md](LIVE-PLAN.md). Die `demo/0X-*`-Branches dienen dabei als Backup und Referenz. Alle Prompts liegen als einzelne Dateien in [prompts/](prompts/README.md) und lassen sich mit `@` direkt an Claude übergeben.
 
 **Spickzettel für den Ablauf mit Branch-Wechsel (Backup-Variante):** [PROMPTS.md](PROMPTS.md)
 
