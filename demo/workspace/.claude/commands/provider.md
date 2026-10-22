@@ -8,5 +8,5 @@ Provider switch result:
 !`./project-memory/scripts/provider.sh $ARGUMENTS --next`
 
 Repeat the provider and the three model mappings above as a short table. If a switch was staged,
-end with exactly one line: "Neu starten: `/exit`, dann `claude -c` (Gespräch läuft weiter)."
+end with exactly the one restart line printed above (CLI: "/exit, dann `claude -c`"; VS Code: neue Konversation im Claude-Panel starten).
 Do nothing else.
