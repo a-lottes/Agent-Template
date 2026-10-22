@@ -2,7 +2,7 @@
 # Creates or resets the live demo workspace (default ~/agent-demo).
 # Run it after every branch switch: it copies the plugin of the current branch.
 #
-#   demo/setup-workspace.sh                 # create / reset (fresh inbox, empty memory)
+#   demo/setup-workspace.sh                 # full reset: fresh inbox, empty memory, provider anthropic
 #   demo/setup-workspace.sh --plugin-only   # only refresh the plugin, keep memory/
 #   DEMO_WS=~/other demo/setup-workspace.sh
 set -euo pipefail
@@ -26,15 +26,29 @@ if [ -s "$WS/.claude/gh-repo" ]; then
   sed -i.bak "s|<owner/repo>|$(cat "$WS/.claude/gh-repo")|" "$WS/CLAUDE.md" && rm -f "$WS/CLAUDE.md.bak"
 fi
 
-# Default for the demo: original Anthropic models (the hub is shown, not used throughout).
-if [ -f "$REPO/scripts/provider.py" ] && [ ! -f "$WS/.claude/settings.local.json" ]; then
+
+CLAUDE_BIN="$(command -v claude || echo "$HOME/.local/bin/claude")"
+
+# Full reset (not --plugin-only): back to the start state of the demo, provider anthropic.
+if [ "${1:-}" != "--plugin-only" ] && [ -f "$REPO/scripts/provider.py" ]; then
+  rm -f "$WS/.claude/settings.local.json.next"
   python3 "$REPO/scripts/provider.py" use anthropic "$WS" >/dev/null
+fi
+
+# Without a marketplace in this branch, drop a plugin registration left over from a later step.
+if [ ! -f "$WS/project-memory/.claude-plugin/marketplace.json" ] && [ -f "$WS/.claude/settings.local.json" ]; then
+  (cd "$WS" && "$CLAUDE_BIN" plugin marketplace remove adesso-agent-demo >/dev/null 2>&1 || true)
+  python3 - "$WS/.claude/settings.local.json" <<'PY'
+import json, sys
+p = sys.argv[1]; d = json.load(open(p))
+d.pop("enabledPlugins", None); d.pop("extraKnownMarketplaces", None)
+open(p, "w").write(json.dumps(d, indent=2) + "\n")
+PY
 fi
 
 # Register the plugin for this workspace (local scope), so plain `claude` and the VS Code
 # panel load it without --plugin-dir. It loads in place from $WS/project-memory.
 if [ -f "$WS/project-memory/.claude-plugin/marketplace.json" ]; then
-  CLAUDE_BIN="$(command -v claude || echo "$HOME/.local/bin/claude")"
   (cd "$WS" && "$CLAUDE_BIN" plugin marketplace add ./project-memory --scope local >/dev/null 2>&1 \
             && "$CLAUDE_BIN" plugin install project-memory@adesso-agent-demo --scope local >/dev/null 2>&1) \
     || echo "  note: plugin registration failed, start with: claude --plugin-dir ./project-memory"
