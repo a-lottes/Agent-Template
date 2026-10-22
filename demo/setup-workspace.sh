@@ -69,6 +69,10 @@ cat > "$WS/.claude/settings.json" <<EOF
       "Bash(python3 project-memory/skills/meeting-to-actions/scripts/create_issues.py *)",
       "Bash(python3 ./project-memory/skills/meeting-to-actions/scripts/md_to_pdf.py *)",
       "Bash(python3 ./project-memory/skills/meeting-to-actions/scripts/create_issues.py *)",
+      "Bash(python3 -I $SCRIPTS/md_to_pdf.py *)",
+      "Bash(python3 -I $SCRIPTS/create_issues.py *)",
+      "Bash(python3 -I project-memory/skills/meeting-to-actions/scripts/md_to_pdf.py *)",
+      "Bash(python3 -I project-memory/skills/meeting-to-actions/scripts/create_issues.py *)",
       "Bash(./project-memory/scripts/provider.sh *)"
     ],
     "deny": ["WebFetch", "WebSearch"]
