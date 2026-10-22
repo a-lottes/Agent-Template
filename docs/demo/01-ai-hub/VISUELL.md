@@ -45,7 +45,7 @@ sequenceDiagram
     Jan->>CC: /provider adesso-hub
     CC->>P: Skript ausführen
     P->>S: Profil „adesso-hub“ vormerken (.next)
-    P-->>Jan: Tabelle: Hub · DeepSeek · Qwen
+    P-->>Jan: Tabelle: Hub · Qwen
     Jan->>CC: /exit
     CC->>S: SessionEnd-Hook aktiviert das Profil
     Jan->>CC: claude -c
@@ -78,8 +78,8 @@ flowchart LR
 
     subgraph SOUV["Profil adesso-hub"]
         Q["Qwen 3.6 35B"]
-        D1["DeepSeek V4 Flash"]
-        D2["DeepSeek V4 Flash"]
+        D1["Qwen 3.6 35B"]
+        D2["Qwen 3.6 35B"]
     end
 
     subgraph ORIG["Profil anthropic"]
@@ -110,8 +110,8 @@ xychart-beta
 
 | Modell | erreichbar | Tool-Call korrekt | Rolle |
 |---|---|---|---|
-| DeepSeek V4 Flash | ✅ | ✅ | Hauptsession, Extraktion, Review |
-| Qwen 3.6 35B | ✅ | ✅ | Triage |
+| DeepSeek V4 Flash | ✅ API · ⚠️ in Claude Code unzuverlässig | ✅ | nicht im Profil |
+| Qwen 3.6 35B | ✅ | ✅ | alle Rollen (opus · sonnet · haiku) |
 | Claude über den Hub | ⛔ noch nicht freigeschaltet | – | später Vergleich |
 
 ## Was bei einer Anfrage passiert
@@ -123,7 +123,7 @@ sequenceDiagram
     participant CC as Claude Code
     participant KC as Schlüsselbund
     participant HUB as adesso AI Hub
-    participant M as DeepSeek (souverän)
+    participant M as Qwen 3.6 (souverän)
 
     Jan->>CC: „Verarbeite die Inbox“
     CC->>KC: apiKeyHelper: Key holen
