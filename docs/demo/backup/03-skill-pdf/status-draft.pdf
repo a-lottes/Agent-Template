@@ -1,0 +1,91 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Length 3494 >>
+stream
+BT 0.45 g /F1 8 Tf 50.0 811.9 Td (Project Memory · Status Draft) Tj ET
+BT 0.45 g /F1 8 Tf 485.3 811.9 Td (2026-10-21) Tj ET
+BT 0.0 g /F2 16 Tf 50.0 756.9 Td (Weekly Status Report) Tj ET
+BT 0.0 g /F1 10 Tf 50.0 737.9 Td (Date: 2026-10-21) Tj ET
+BT 0.0 g /F2 13 Tf 50.0 711.9 Td (Highlights) Tj ET
+BT 0.0 g /F1 10 Tf 54.0 692.9 Td (•) Tj ET
+BT 0.0 g /F1 10 Tf 64.0 692.9 Td (Go-live rescheduled from 30 Nov to 14 Dec due to data migration readiness.) Tj ET
+BT 0.0 g /F1 10 Tf 54.0 677.9 Td (•) Tj ET
+BT 0.0 g /F1 10 Tf 64.0 677.9 Td (Pilot scope confirmed: claims department only.) Tj ET
+BT 0.0 g /F2 13 Tf 50.0 653.9 Td (Decisions This Week) Tj ET
+0.92 g 50.0 631.9 104.2 16.0 re f
+0.7 G 0.5 w 50.0 631.9 104.2 16.0 re S
+BT 0.0 g /F2 8 Tf 53.0 636.9 Td (Date) Tj ET
+0.92 g 154.2 631.9 297.6 16.0 re f
+0.7 G 0.5 w 154.2 631.9 297.6 16.0 re S
+BT 0.0 g /F2 8 Tf 157.2 636.9 Td (Decision) Tj ET
+0.92 g 451.8 631.9 93.5 16.0 re f
+0.7 G 0.5 w 451.8 631.9 93.5 16.0 re S
+BT 0.0 g /F2 8 Tf 454.8 636.9 Td (Decided by) Tj ET
+0.7 G 0.5 w 50.0 605.9 104.2 26.0 re S
+BT 0.0 g /F1 8 Tf 53.0 620.9 Td (2026-10-12) Tj ET
+0.7 G 0.5 w 154.2 605.9 297.6 26.0 re S
+BT 0.0 g /F1 8 Tf 157.2 620.9 Td (Go-live date moved from 30 Nov to 14 Dec because the data migration is not) Tj ET
+BT 0.0 g /F1 8 Tf 157.2 610.9 Td (ready) Tj ET
+0.7 G 0.5 w 451.8 605.9 93.5 26.0 re S
+BT 0.0 g /F1 8 Tf 454.8 620.9 Td (Clara) Tj ET
+0.7 G 0.5 w 50.0 589.9 104.2 16.0 re S
+BT 0.0 g /F1 8 Tf 53.0 594.9 Td (2026-10-12) Tj ET
+0.7 G 0.5 w 154.2 589.9 297.6 16.0 re S
+BT 0.0 g /F1 8 Tf 157.2 594.9 Td (Pilot starts with the claims department only) Tj ET
+0.7 G 0.5 w 451.8 589.9 93.5 16.0 re S
+BT 0.0 g /F1 8 Tf 454.8 594.9 Td (TBD) Tj ET
+BT 0.0 g /F2 13 Tf 50.0 559.9 Td (Open Actions by Owner) Tj ET
+BT 0.0 g /F2 11 Tf 50.0 533.9 Td (Ben) Tj ET
+BT 0.0 g /F1 10 Tf 54.0 514.9 Td (•) Tj ET
+BT 0.0 g /F1 10 Tf 64.0 514.9 Td ([OVERDUE] Deliver the interface specification — due 2026-10-19 — status: open) Tj ET
+BT 0.0 g /F2 11 Tf 50.0 492.9 Td (Clara) Tj ET
+BT 0.0 g /F1 10 Tf 54.0 473.9 Td (•) Tj ET
+BT 0.0 g /F1 10 Tf 64.0 473.9 Td (Check budget impact for the extra two weeks with finance — due: TBD — status: open) Tj ET
+BT 0.0 g /F2 11 Tf 50.0 451.9 Td (Unassigned \(TBD\)) Tj ET
+BT 0.0 g /F1 10 Tf 54.0 432.9 Td (•) Tj ET
+BT 0.0 g /F1 10 Tf 64.0 432.9 Td (Run a load test before go-live — due: TBD — status: open) Tj ET
+BT 0.0 g /F2 13 Tf 50.0 408.9 Td (Top Risks) Tj ET
+BT 0.0 g /F1 10 Tf 50.0 389.9 Td (1. Test environment still uses production-like data; cleanup unowned \(impact/likelihood: TBD, mitigation:) Tj ET
+BT 0.0 g /F1 10 Tf 50.0 376.9 Td (TBD\)) Tj ET
+BT 0.0 g /F1 10 Tf 50.0 359.9 Td (2. Vendor API rate limit might not carry the pilot load \(impact/likelihood: TBD, mitigation: TBD\)) Tj ET
+BT 0.0 g /F2 13 Tf 50.0 333.9 Td (Questions for the Steering Committee) Tj ET
+BT 0.0 g /F1 10 Tf 54.0 314.9 Td (•) Tj ET
+BT 0.0 g /F1 10 Tf 64.0 314.9 Td (Who owns the pilot-start decision \(currently unassigned\)?) Tj ET
+BT 0.0 g /F1 10 Tf 54.0 299.9 Td (•) Tj ET
+BT 0.0 g /F1 10 Tf 64.0 299.9 Td (Has the budget impact for the two-week delay been confirmed with finance?) Tj ET
+BT 0.0 g /F1 10 Tf 54.0 284.9 Td (•) Tj ET
+BT 0.0 g /F1 10 Tf 64.0 284.9 Td (Who will own and schedule the pre-go-live load test?) Tj ET
+BT 0.0 g /F1 10 Tf 54.0 269.9 Td (•) Tj ET
+BT 0.0 g /F1 10 Tf 64.0 269.9 Td (Who will own cleanup of production-like data in the test environment, and by when?) Tj ET
+BT 0.45 g /F1 8 Tf 282.6 30 Td (1 / 1) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 5 0 R >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000212 00000 n 
+0000000314 00000 n 
+0000003860 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+4002
+%%EOF
