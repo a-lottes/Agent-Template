@@ -29,7 +29,7 @@ Generalprobe 21.10.2026, Profil `anthropic`:
 | Lauf | Dauer | Ergebnis |
 |---|---|---|
 | `claude plugin validate --strict …` | < 1 s | ✔ |
-| `scripts/eval.sh anthropic --case no-trigger` | ca. 4 s | Score 1.00 |
+| `scripts/eval.sh adesso-hub --case no-trigger` | ca. 4 s | Score 1.00 |
 | `scripts/skill_check.py anthropic no-trigger` | ca. 7 s | 2/2 |
 | `scripts/skill_check.py anthropic` (alle 3 Fälle) | ca. 2,5 min | **9/9** |
 
@@ -63,7 +63,7 @@ claude plugin validate --strict commands
 ### 3 · Kurzer Lauf (20 s)
 
 ```bash
-scripts/eval.sh anthropic --case no-trigger
+scripts/eval.sh adesso-hub --case no-trigger
 ```
 
 Ausgabe: Tabelle mit `no-trigger 1.00 100%`. *„Das ist das offizielle Werkzeug von Claude Code. Im Team läuft das in CI, bei jeder Skill-Änderung.“*

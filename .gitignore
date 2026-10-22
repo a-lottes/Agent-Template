@@ -5,3 +5,4 @@ __pycache__/
 providers/.hub-url
 docs/demo/PERSOENLICH.md
 .claude/settings.local.json.next
+.scratch/
