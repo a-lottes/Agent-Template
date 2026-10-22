@@ -104,7 +104,7 @@ Fasse inbox/2026-10-12-steering.md in drei Stichpunkten zusammen.
 claude -c
 ```
 
-**Copilot (VS Code):** Chat öffnen → Modellauswahl → „Adesso AI Hub · DeepSeek“ wählen →
+**Copilot (VS Code):** Chat öffnen → Modellauswahl → „adesso · Qwen 3.6 35B (souverän)“ wählen →
 ```
 Fasse inbox/2026-10-12-steering.md in drei Stichpunkten zusammen.
 ```

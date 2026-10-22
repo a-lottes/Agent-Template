@@ -5,8 +5,8 @@
     "apiType": "chat-completions",
     "models": [
       {
-        "id": "deepseek-v4-flash-sovereign",
-        "name": "adesso · DeepSeek V4 Flash (souverän)",
+        "id": "qwen-3.6-35b-sovereign",
+        "name": "adesso · Qwen 3.6 35B (souverän)",
         "url": "https://<ai-hub-host>/v1/chat/completions",
         "toolCalling": true,
         "vision": false,
@@ -16,8 +16,8 @@
         "streaming": true
       },
       {
-        "id": "qwen-3.6-35b-sovereign",
-        "name": "adesso · Qwen 3.6 35B (souverän)",
+        "id": "deepseek-v4-flash-sovereign",
+        "name": "adesso · DeepSeek V4 Flash (souverän)",
         "url": "https://<ai-hub-host>/v1/chat/completions",
         "toolCalling": true,
         "vision": false,
