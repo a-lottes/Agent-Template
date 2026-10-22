@@ -86,7 +86,9 @@ def cmd_use(args) -> None:
     """--next: only stage the switch (.json.next); the workspace's SessionEnd hook applies it on /exit.
     Used by /provider, because Claude Code reloads settings instantly and the running turn would
     otherwise go to the new provider with the old model."""
-    staged = "--next" in args
+    # The VS Code extension has no /exit (so no SessionEnd), hence switch immediately there.
+    in_vscode = "vscode" in os.environ.get("CLAUDE_CODE_ENTRYPOINT", "")
+    staged = "--next" in args and not in_vscode
     args = [a for a in args if a != "--next"]
     if not args:
         sys.exit("usage: provider.sh use <profile> [workspace] [--next]")
@@ -103,6 +105,8 @@ def cmd_use(args) -> None:
     print(f"Wrote {target}\n{describe(settings)}")
     if staged:
         print("\nStaged. Takes effect on /exit; then `claude -c` continues this conversation on the new provider.")
+    elif in_vscode:
+        print("\nActive. VS Code: start a new conversation (+ in the Claude panel) to use the new provider.")
     else:
         print("\nActive from the next start. In Claude Code: /exit, then `claude -c` to continue\n"
               "this conversation on the new provider (VS Code: open a new Claude session).")
