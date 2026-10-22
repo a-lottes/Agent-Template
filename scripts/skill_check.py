@@ -72,7 +72,8 @@ def run_case(name: str, env: dict) -> dict:
         shutil.copy(EXAMPLES / "CLAUDE.md", ws / "CLAUDE.md")
 
     scripts = REPO / "skills/meeting-to-actions/scripts"
-    allow = {"permissions": {"allow": [f"Bash(python3 {scripts}/md_to_pdf.py *)"]}}
+    allow = {"permissions": {"allow": [f"Bash(python3 {scripts}/md_to_pdf.py *)",
+                                       f"Bash(python3 -I {scripts}/md_to_pdf.py *)"]}}
     cmd = [CLAUDE, "-p", prompt, "--plugin-dir", str(REPO), "--permission-mode", "acceptEdits",
            "--setting-sources", "project,local", "--settings", json.dumps(allow), "--add-dir", str(REPO),
            "--output-format", "stream-json", "--verbose"]
