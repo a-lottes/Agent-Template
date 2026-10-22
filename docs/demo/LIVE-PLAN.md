@@ -1,5 +1,7 @@
 # Live-Plan: alles live bauen auf `demo/live` (ohne Branch-Wechsel und Merges)
 
+> Für einen 15-Minuten-Slot gibt es die gekürzte Fassung [LIVE-15MIN.md](LIVE-15MIN.md).
+
 Ab jetzt wird alles live auf **einem** Branch `demo/live` gebaut. Die Branches `demo/00-setup` … `demo/05-skill-check` sind nur noch **Backup und Referenz**. Jeder Bauschritt endet mit einem Commit, so zeigt `git log` den Fortschritt.
 
 Zwei Claude-Code-Sitzungen laufen nebeneinander:
