@@ -61,4 +61,9 @@ claude -p "/project-memory:process-inbox" --plugin-dir ./project-memory --permis
 
 ## Package for a team
 
-Put the folder in a Git repo with a `.claude-plugin/marketplace.json` and install via `/plugin marketplace add` and `/plugin install project-memory`.
+This repo is the marketplace itself. Install it as a skill:
+
+```bash
+/claude plugin marketplace add <Repo-Pfad oder Git-URL>
+/claude plugin install project-memory@adesso-agent-demo
+```
