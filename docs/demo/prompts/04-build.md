@@ -17,4 +17,4 @@ Baue Schritt 04 auf demo/live, ohne Merge. Ziel:
 
 Test im Ordner .scratch/ im Repo (ist per .gitignore ausgeschlossen, nicht /tmp): Lege .scratch/actions.md mit einer Tabelle | Action | Owner | Due | Status | Source | an (zwei Zeilen open, eine Zeile "open · #7"). Führe create_issues.py .scratch/actions.md --dry-run aus (ohne --repo, das Zielrepo kommt aus dem aktuellen Checkout). Erwartet: zwei Issues in der Vorschau, die Zeile mit #7 wird übersprungen. Kein echtes Anlegen, kein Aufruf ohne --dry-run. Danach .scratch/ löschen.
 
-Zum Schluss committen: "Demo 04: Action items als GitHub-Issues". Der Working Tree muss danach sauber sein (git status). Sag mir dann, dass ich eine neue Claude-Session öffnen soll.
+Nicht committen und nichts stagen: Die Änderungen bleiben im Working Tree, damit sie im Source-Control-Diff von VS Code sichtbar sind. .scratch/ muss danach gelöscht sein. Sag mir dann, dass ich eine neue Claude-Session öffnen soll.
