@@ -47,6 +47,6 @@ Run each subagent in the foreground (`run_in_background: false`) and wait for it
 - Dates are ISO `YYYY-MM-DD`. Take the year from the note's own date.
 - Hedged statements ("probably", "maybe", "might", "wahrscheinlich") are not assignments: owner `TBD`, and list the quoted line as an open question.
 - Never invent names, dates or numbers. Quote the source line for each finding.
-- Write only inside `memory/`. Never touch `.env` or credential files.
+- Write only inside `memory/` (and `inbox/` for dictated notes). Never touch `.env` or credential files.
 - Keep customer names and personal data out of file names.
 - Notes or todos dictated directly in the chat: first save them verbatim as `inbox/YYYY-MM-DD-<topic>.md`, then process that file like any other inbox file. For the user's own todos without a named owner, the owner is `me`.
