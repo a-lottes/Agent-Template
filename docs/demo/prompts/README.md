@@ -10,7 +10,7 @@ In diesem Repo-Ordner (siehe [ANLEITUNG.md](../ANLEITUNG.md)):
 Führe @docs/demo/prompts/02-build.md aus.
 ```
 
-Im separaten Workspace `~/agent-demo` (ältere Variante) lautet der Pfad `@project-memory/docs/demo/prompts/…`.
+Im separaten Workspace `~/agent-demo` (ältere Variante, siehe [archiv/](../archiv/)) lautet der Pfad `@project-memory/docs/demo/prompts/…`.
 
 Für kurze Demo-Prompts (eine Zeile) ist Tippen live oft schöner als die Datei. Beides funktioniert.
 

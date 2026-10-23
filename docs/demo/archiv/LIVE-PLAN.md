@@ -1,5 +1,7 @@
 # Live-Plan: alles live bauen auf `demo/live` (ohne Branch-Wechsel und Merges)
 
+> **Archiv:** Ältere Variante mit separatem Workspace `~/agent-demo` und Branch-Wechseln. Sie funktioniert weiterhin, ist aber nicht mehr der empfohlene Weg. **Aktuell gilt [ANLEITUNG.md](../ANLEITUNG.md).**
+
 > Für einen 15-Minuten-Slot gibt es die gekürzte Fassung [LIVE-15MIN.md](LIVE-15MIN.md).
 
 Ab jetzt wird alles live auf **einem** Branch `demo/live` gebaut. Die Branches `demo/00-setup` … `demo/05-skill-check` sind nur noch **Backup und Referenz**. Jeder Bauschritt endet mit einem Commit, so zeigt `git log` den Fortschritt.
@@ -13,7 +15,7 @@ Zwei Claude-Code-Sitzungen laufen nebeneinander:
 
 Beide Sitzungen laufen mit dem Provider `anthropic`. Nur in Schritt 01 wird der Hub gezeigt.
 
-**Alle Prompts liegen als einzelne Dateien in [prompts/](prompts/README.md).** Du gibst sie Claude mit `@` mit, statt sie zu kopieren:
+**Alle Prompts liegen als einzelne Dateien in [prompts/](../prompts/README.md).** Du gibst sie Claude mit `@` mit, statt sie zu kopieren:
 
 | Sitzung | So rufst du einen Prompt auf |
 |---|---|
