@@ -5,7 +5,8 @@
     create_issues.py memory/actions.md               # create, then write "#<n>" into Status
 
 Target repo: --repo owner/name, else $PROJECT_MEMORY_GH_REPO, else the line
-"GitHub repo for action items: owner/name" in ./CLAUDE.md.
+"GitHub repo for action items: owner/name" in ./CLAUDE.md, else the GitHub repo of the
+current git checkout.
 Rows whose Status already contains an issue reference (#123) are skipped, so re-runs are safe.
 """
 import argparse
@@ -26,6 +27,11 @@ def target_repo(cli_value: str) -> str:
         m = re.search(r"GitHub repo for action items:\s*`?([\w.-]+/[\w.-]+)`?", claude_md.read_text())
         if m:
             return m.group(1)
+    # Last resort: the GitHub repo of the current git checkout (e.g. when running inside this repo).
+    found = subprocess.run(["gh", "repo", "view", "--json", "nameWithOwner", "-q", ".nameWithOwner"],
+                           capture_output=True, text=True)
+    if found.returncode == 0 and found.stdout.strip():
+        return found.stdout.strip()
     sys.exit("No target repo. Add 'GitHub repo for action items: owner/name' to CLAUDE.md or pass --repo.")
 
 
