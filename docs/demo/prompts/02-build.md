@@ -20,7 +20,7 @@ Baue Schritt 02 auf dem Branch demo/live. Kein Merge, nur Dateien bearbeiten. Zi
    - Wichtig: Frontmatter nur name und description, kein allowed-tools (damit wird der Skill nicht geladen).
 6. Lösche skills/meeting-to-actions/templates/ (actions.md, decisions.md, risks.md).
 
-Danach: claude plugin validate --strict skills und claude plugin validate --strict agents ausführen und Ergebnis zeigen. Dann committen: "Demo 02: Skill einsetzen (Marketplace, Tabellen im Skill, Hedged-Regel)".
+Danach: claude plugin validate --strict skills und claude plugin validate --strict agents ausführen und Ergebnis zeigen. Nicht committen und nichts stagen: Die Änderungen bleiben im Working Tree, damit sie im Source-Control-Diff von VS Code sichtbar sind.
 
 Zum Schluss das Plugin für diesen Ordner registrieren, damit es in neuen Sessions geladen wird:
 claude plugin marketplace add . --scope local

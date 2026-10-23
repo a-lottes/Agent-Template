@@ -1,6 +1,6 @@
 # 05 · Validieren und kurz evaluieren (optional, Detail)
 
-Optionaler Zusatz zu [ANLEITUNG.md](../ANLEITUNG.md). Die Dateien liegen fertig im Referenz-Branch `demo/05-skill-check`. Auf `demo/live` holst du sie ohne Merge mit `git checkout demo/05-skill-check -- evals scripts/eval.sh scripts/skill_check.py` oder baust sie mit [prompts/05-build.md](../prompts/05-build.md). Dauer ca. 2 Minuten.
+Optionaler Zusatz zu [ANLEITUNG.md](../ANLEITUNG.md). Die Dateien liegen fertig im Referenz-Branch `demo/05-skill-check`. Auf `demo/live` holst du sie ohne Merge mit `git restore --source demo/05-skill-check -- evals scripts/eval.sh scripts/skill_check.py` oder baust sie mit [prompts/05-build.md](../prompts/05-build.md). Dauer ca. 2 Minuten.
 
 ## Botschaft
 
