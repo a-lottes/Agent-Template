@@ -62,8 +62,10 @@ Neue Session öffnen, dann:
 ```
 
 ```
-Führe @docs/demo/prompts/01-demo-summary.md aus.
+Fasse inbox/2026-10-12-steering.md in drei Stichpunkten zusammen.
 ```
+
+Auf dem Hub den kurzen Prompt lieber tippen als `@datei` übergeben. Qwen löst Dateiverweise deutlich langsamer auf.
 
 Zurück zum Original:
 
@@ -71,7 +73,9 @@ Zurück zum Original:
 /provider anthropic
 ```
 
-Neue Session öffnen. Ab hier läuft alles mit den Anthropic-Modellen (schneller für Agenten-Läufe).
+Neue Session öffnen. Ab hier läuft alles mit den Anthropic-Modellen. Auf dem Hub dauern Skill-Läufe mit Subagents in Tests mehrere Minuten, mit Claude etwa eine.
+
+In der CLI statt „neue Session“: `/exit`, dann `claude -c`.
 
 ---
 

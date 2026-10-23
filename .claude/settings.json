@@ -1,10 +1,25 @@
 {
   "permissions": {
-    "allow": ["Bash(./scripts/provider.sh *)"]
+    "allow": [
+      "Bash(./scripts/provider.sh *)",
+      "Bash(python3 *skills/meeting-to-actions/scripts/md_to_pdf.py *)",
+      "Bash(python3 *skills/meeting-to-actions/scripts/create_issues.py *)",
+      "Edit(./memory/**)",
+      "Write(./memory/**)",
+      "Edit(./inbox/**)",
+      "Write(./inbox/**)"
+    ]
   },
   "hooks": {
     "SessionEnd": [
-      { "hooks": [ { "type": "command", "command": "cd \"$CLAUDE_PROJECT_DIR\" && [ -f .claude/settings.local.json.next ] && mv .claude/settings.local.json.next .claude/settings.local.json || true" } ] }
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && [ -f .claude/settings.local.json.next ] && mv .claude/settings.local.json.next .claude/settings.local.json || true"
+          }
+        ]
+      }
     ]
   }
 }
