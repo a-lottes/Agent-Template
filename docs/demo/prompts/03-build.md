@@ -15,4 +15,4 @@ Baue Schritt 03 auf demo/live, ohne Merge. Ziel:
 
 Test im Ordner .scratch/ im Repo (ist per .gitignore ausgeschlossen, nicht /tmp): Kopiere examples/inbox/2026-10-12-steering.md nicht, sondern lege dort ein kleines Test-Memory an (memory/actions.md mit einer Tabelle | Action | Owner | Due | Status | Source | und zwei Zeilen, dazu ein memory/status-draft.md mit Überschrift, Aufzählung, Zitat und Tabelle). Lass md_to_pdf.py auf .scratch/memory laufen, prüfe die PDFs mit file und zeig mir die Ausgabe. Danach .scratch/ löschen.
 
-Zum Schluss committen: "Demo 03: Markdown + PDF-Export". Der Working Tree muss danach sauber sein (git status).
+Zum Schluss committen: "Demo 03: Markdown + PDF-Export". Der Working Tree muss danach sauber sein (git status). Sag mir dann, dass ich eine neue Claude-Session öffnen soll.

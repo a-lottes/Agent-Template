@@ -1,31 +1,40 @@
 # BL-AT 2026 · Live-Demo „Claude Skills richtig einsetzen“
 
-Hands-on-Demo in sechs Schritten. Jeder Schritt ist ein eigener Branch und baut auf dem vorherigen auf.
-Geht live etwas schief, springt ihr einfach auf den nächsten Branch.
+## Start hier: [ANLEITUNG.md](ANLEITUNG.md)
 
-| Branch | Thema | Doku (Detail) | Doku (Visuell) |
-|---|---|---|---|
-| `demo/00-setup` | Ausgangslage, Demo-Workspace, Gesamtablauf | [ABLAUF](00-setup/ABLAUF.md) | [VISUELL](00-setup/VISUELL.md) |
-| `demo/01-ai-hub` | adesso AI Hub zeigen, `/provider` zum Umschalten, Copilot | [ABLAUF](01-ai-hub/ABLAUF.md) | [VISUELL](01-ai-hub/VISUELL.md) |
-| `demo/02-skill-use` | Skill korrekt einsetzen: Aufbau, Auslösen, Ergebnis | [ABLAUF](02-skill-use/ABLAUF.md) | [VISUELL](02-skill-use/VISUELL.md) |
-| `demo/03-skill-pdf` | Skill anpassen: Ergebnisse als Markdown **und** PDF | [ABLAUF](03-skill-pdf/ABLAUF.md) | [VISUELL](03-skill-pdf/VISUELL.md) |
-| `demo/04-skill-github` | Skill anpassen: Aufgaben als GitHub-Issues per `gh` | [ABLAUF](04-skill-github/ABLAUF.md) | [VISUELL](04-skill-github/VISUELL.md) |
-| `demo/05-skill-check` | Validieren und kurz evaluieren | [ABLAUF](05-skill-check/ABLAUF.md) | [VISUELL](05-skill-check/VISUELL.md) |
+Die Live-Demo in vier Schritten, alles in diesem Repo-Ordner:
 
-**Für den Vortrag (15 Minuten):** [LIVE-15MIN.md](LIVE-15MIN.md), die gekürzte Fassung mit Zeitplan.
+1. adesso AI Hub zeigen und Provider wechseln
+2. Skill bauen: Aufgaben aus Notizen und diktierten Todos
+3. Skill erweitern: Ergebnisse als Markdown **und** PDF
+4. Skill erweitern: Aufgaben als GitHub-Issues
 
-**Live-Plan (ausführlich): alles live auf einem Branch `demo/live` bauen, ohne Branch-Wechsel und Merges:** [LIVE-PLAN.md](LIVE-PLAN.md). Die `demo/0X-*`-Branches dienen dabei als Backup und Referenz. Alle Prompts liegen als einzelne Dateien in [prompts/](prompts/README.md) und lassen sich mit `@` direkt an Claude übergeben.
+Die Prompts liegen als Dateien in [prompts/](prompts/README.md) und werden mit `@` an Claude übergeben, z. B. `Führe @docs/demo/prompts/02-build.md aus.`
 
-**Spickzettel für den Ablauf mit Branch-Wechsel (Backup-Variante):** [PROMPTS.md](PROMPTS.md)
+## Branches
 
-Alle Dokumente liegen in **jedem** `demo/*`-Branch und auf `main`. Ihr könnt also von überall aus lesen, egal welcher Schritt gerade ausgecheckt ist.
+| Branch | Rolle |
+|---|---|
+| `demo/01-ai-hub` | **Startpunkt.** Von hier aus wird `demo/live` angelegt, auf dem live gebaut wird |
+| `demo/02-skill-use` | Referenz: fertiger Stand nach Schritt 2 |
+| `demo/03-skill-pdf` | Referenz: fertiger Stand nach Schritt 3 |
+| `demo/04-skill-github` | Referenz: fertiger Stand nach Schritt 4 |
+| `demo/05-skill-check` | Referenz: zusätzlich Validierung und Eval-Fälle (optional) |
+| `demo/00-setup` | Basis mit Doku und Hilfsskripten |
 
-## Springen, wenn live etwas hakt
+Alle Dokumente liegen identisch in jedem dieser Branches.
 
-```bash
-cd ~/Documents/projects/Agent-Template
-git switch demo/03-skill-pdf         # Ziel-Branch
-demo/setup-workspace.sh              # Workspace frisch machen (Provider bleibt erhalten)
-```
+## Detail-Dokumente pro Schritt
 
-`demo/setup-workspace.sh` kopiert das Plugin des aktuellen Branches nach `~/agent-demo/project-memory`. Nach jedem Branch-Wechsel also einmal ausführen. Mit `--plugin-only` bleibt `memory/` erhalten (praktisch, wenn ihr mitten in der Demo auf den nächsten Schritt springt).
+| Schritt | Detail | Visuell |
+|---|---|---|
+| Überblick und Setup | [00-setup/ABLAUF.md](00-setup/ABLAUF.md) | [00-setup/VISUELL.md](00-setup/VISUELL.md) |
+| 1 · AI Hub | [01-ai-hub/ABLAUF.md](01-ai-hub/ABLAUF.md) | [01-ai-hub/VISUELL.md](01-ai-hub/VISUELL.md) |
+| 2 · Skill bauen | [02-skill-use/ABLAUF.md](02-skill-use/ABLAUF.md) | [02-skill-use/VISUELL.md](02-skill-use/VISUELL.md) |
+| 3 · PDF | [03-skill-pdf/ABLAUF.md](03-skill-pdf/ABLAUF.md) | [03-skill-pdf/VISUELL.md](03-skill-pdf/VISUELL.md) |
+| 4 · GitHub-Issues | [04-skill-github/ABLAUF.md](04-skill-github/ABLAUF.md) | [04-skill-github/VISUELL.md](04-skill-github/VISUELL.md) |
+| optional · Prüfen | [05-skill-check/ABLAUF.md](05-skill-check/ABLAUF.md) | [05-skill-check/VISUELL.md](05-skill-check/VISUELL.md) |
+
+## Archiv
+
+Ältere Varianten mit separatem Workspace `~/agent-demo` und Branch-Wechseln liegen in [archiv/](archiv/). Sie funktionieren weiterhin, sind aber nicht mehr der empfohlene Weg.
