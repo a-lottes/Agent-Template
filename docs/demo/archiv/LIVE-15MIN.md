@@ -1,6 +1,8 @@
 # Live-Demo in 15 Minuten (Kurzfassung des Live-Plans)
 
-Gleicher Aufbau wie [LIVE-PLAN.md](LIVE-PLAN.md), aber auf 15 Minuten gekürzt. Die Prompt-Dateien liegen in [prompts/](prompts/README.md).
+> **Archiv:** Ältere Variante mit separatem Workspace `~/agent-demo` und Branch-Wechseln. Sie funktioniert weiterhin, ist aber nicht mehr der empfohlene Weg. **Aktuell gilt [ANLEITUNG.md](../ANLEITUNG.md).**
+
+Gleicher Aufbau wie [LIVE-PLAN.md](LIVE-PLAN.md), aber auf 15 Minuten gekürzt. Die Prompt-Dateien liegen in [prompts/](../prompts/README.md).
 
 **Was gegenüber dem Live-Plan wegfällt:**
 
@@ -89,4 +91,4 @@ Optional `evals/no-trigger/case.yaml` 15 Sekunden lang zeigen.
 | Ein Bau-Prompt hängt | Abbrechen (Esc), Dateien aus dem Referenz-Branch holen (wie oben), weiter |
 | Hub antwortet nicht | Schritt 01 nur mit `/provider` (Tabelle) zeigen, nicht umschalten |
 
-Nach dem Vortrag: [prompts/99-after-demo.md](prompts/99-after-demo.md) und die Demo-Issues schließen.
+Nach dem Vortrag: [prompts/99-after-demo.md](../prompts/99-after-demo.md) und die Demo-Issues schließen.

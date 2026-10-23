@@ -62,7 +62,7 @@ xychart-beta
 ```mermaid
 flowchart LR
     T["📏 dieselben Testfälle"] --> A["anthropic<br/>Claude"]
-    T --> H["adesso-hub<br/>DeepSeek · Qwen"]
+    T --> H["adesso-hub<br/>Qwen 3.6"]
     A --> C["📊 Vergleich:<br/>welches Modell taugt<br/>für diesen Skill?"]
     H --> C
 ```
