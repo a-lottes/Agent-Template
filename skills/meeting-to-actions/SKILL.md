@@ -1,6 +1,6 @@
 ---
 name: meeting-to-actions
-description: Use whenever files in inbox/ (meeting notes, minutes, transcripts, project documents) should be processed into the project memory, i.e. decisions, action items, risks or open questions written to memory/decisions.md, memory/actions.md, memory/risks.md. Also when open action items should become GitHub issues. Also for German requests (Protokoll, Besprechungsnotizen, Mitschrift, Projektgedächtnis, Aufgaben, Entscheidungen, Risiken, Issues/Tickets anlegen).
+description: Use whenever files in inbox/ (meeting notes, minutes, transcripts, project documents) should be processed into the project memory, i.e. decisions, action items, risks or open questions written to memory/decisions.md, memory/actions.md, memory/risks.md. Also when the user dictates own todos or notes in the chat. Also when open action items should become GitHub issues. Also for German requests (Protokoll, Besprechungsnotizen, Mitschrift, Projektgedächtnis, Aufgaben, Todos, Entscheidungen, Risiken, Issues/Tickets anlegen).
 ---
 
 # Meeting to actions
@@ -58,5 +58,6 @@ Only when the user asks for it (e.g. "create issues for the open actions", "Tick
 - Dates are ISO `YYYY-MM-DD`. Take the year from the note's own date.
 - Hedged statements ("probably", "maybe", "might", "wahrscheinlich") are not assignments: owner `TBD`, and list the quoted line as an open question.
 - Never invent names, dates or numbers. Quote the source line for each finding.
-- Write only inside `memory/`. Never touch `.env` or credential files.
+- Write only inside `memory/` (and `inbox/` for dictated notes). Never touch `.env` or credential files.
 - Keep customer names and personal data out of file names.
+- Notes or todos dictated directly in the chat: first save them verbatim as `inbox/YYYY-MM-DD-<topic>.md`, then process that file like any other inbox file. For the user's own todos without a named owner, the owner is `me`.
