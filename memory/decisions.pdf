@@ -1,0 +1,66 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 1847 >>
+stream
+BT 0.00 g /F2 18.0 Tf 50.00 743.70 Td (Decisions) Tj ET
+0.60 G 0.50 w 50.00 741.70 m 545.00 741.70 l S
+0.60 G 0.50 w 50.00 731.70 m 545.00 731.70 l S
+0.90 g 50.00 715.30 495.00 16.40 re f
+BT 0.00 g /F2 8.0 Tf 53.00 720.80 Td (Date) Tj ET
+BT 0.00 g /F2 8.0 Tf 99.91 720.80 Td (Decision) Tj ET
+BT 0.00 g /F2 8.0 Tf 251.89 720.80 Td (Decided by) Tj ET
+BT 0.00 g /F2 8.0 Tf 317.54 720.80 Td (Source) Tj ET
+0.60 G 0.50 w 50.00 715.30 m 545.00 715.30 l S
+BT 0.00 g /F1 8.0 Tf 53.00 704.40 Td (2026-10-12) Tj ET
+BT 0.00 g /F1 8.0 Tf 99.91 704.40 Td (Go-live moves from 30 Nov to 14 Dec) Tj ET
+BT 0.00 g /F1 8.0 Tf 99.91 694.00 Td (2026 because the data migration is not) Tj ET
+BT 0.00 g /F1 8.0 Tf 99.91 683.60 Td (ready) Tj ET
+BT 0.00 g /F1 8.0 Tf 251.89 704.40 Td (TBD \(confirmed) Tj ET
+BT 0.00 g /F1 8.0 Tf 251.89 694.00 Td (by Clara\)) Tj ET
+BT 0.00 g /F1 8.0 Tf 317.54 704.40 Td (2026-10-12-steering.md: "Clara confirmed the go-live moves) Tj ET
+BT 0.00 g /F1 8.0 Tf 317.54 694.00 Td (from 30 Nov to 14 Dec because the data migration is not) Tj ET
+BT 0.00 g /F1 8.0 Tf 317.54 683.60 Td (ready.") Tj ET
+0.60 G 0.50 w 50.00 678.10 m 545.00 678.10 l S
+BT 0.00 g /F1 8.0 Tf 53.00 667.20 Td (2026-10-12) Tj ET
+BT 0.00 g /F1 8.0 Tf 99.91 667.20 Td (The pilot starts with the claims) Tj ET
+BT 0.00 g /F1 8.0 Tf 99.91 656.80 Td (department only) Tj ET
+BT 0.00 g /F1 8.0 Tf 251.89 667.20 Td (TBD) Tj ET
+BT 0.00 g /F1 8.0 Tf 317.54 667.20 Td (2026-10-12-steering.md: "Decision: the pilot starts with the) Tj ET
+BT 0.00 g /F1 8.0 Tf 317.54 656.80 Td (claims department only.") Tj ET
+0.60 G 0.50 w 50.00 651.30 m 545.00 651.30 l S
+BT 0.30 g /F2 9.0 Tf 50.00 802.00 Td (Project Memory \267 Decisions) Tj ET
+BT 0.30 g /F1 9.0 Tf 498.97 802.00 Td (2026-10-23) Tj ET
+0.60 G 0.50 w 50.00 796.00 m 545.00 796.00 l S
+BT 0.30 g /F1 9.0 Tf 288.74 28.00 Td (1 / 1) Tj ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000218 00000 n 
+0000000320 00000 n 
+0000000456 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+2355
+%%EOF

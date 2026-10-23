@@ -6,5 +6,5 @@ providers/.hub-url
 docs/demo/PERSOENLICH.md
 .claude/settings.local.json.next
 .scratch/
-inbox/
-memory/
+memory/audit.log
+memory/memory/

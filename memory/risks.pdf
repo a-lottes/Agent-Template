@@ -1,0 +1,80 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 2762 >>
+stream
+BT 0.00 g /F2 18.0 Tf 50.00 743.70 Td (Risks) Tj ET
+0.60 G 0.50 w 50.00 741.70 m 545.00 741.70 l S
+0.60 G 0.50 w 50.00 731.70 m 545.00 731.70 l S
+0.90 g 50.00 715.30 495.00 16.40 re f
+BT 0.00 g /F2 8.0 Tf 53.00 720.80 Td (Risk) Tj ET
+BT 0.00 g /F2 8.0 Tf 176.92 720.80 Td (Impact) Tj ET
+BT 0.00 g /F2 8.0 Tf 208.70 720.80 Td (Likelihood) Tj ET
+BT 0.00 g /F2 8.0 Tf 254.71 720.80 Td (Mitigation) Tj ET
+BT 0.00 g /F2 8.0 Tf 355.65 720.80 Td (Source) Tj ET
+0.60 G 0.50 w 50.00 715.30 m 545.00 715.30 l S
+BT 0.00 g /F1 8.0 Tf 53.00 704.40 Td (Vendor API rate limit might not) Tj ET
+BT 0.00 g /F1 8.0 Tf 53.00 694.00 Td (carry the pilot load) Tj ET
+BT 0.00 g /F1 8.0 Tf 176.92 704.40 Td (high) Tj ET
+BT 0.00 g /F1 8.0 Tf 208.70 704.40 Td (TBD) Tj ET
+BT 0.00 g /F1 8.0 Tf 254.71 704.40 Td (Load test before go-live) Tj ET
+BT 0.00 g /F1 8.0 Tf 254.71 694.00 Td (\(requested by Ben,) Tj ET
+BT 0.00 g /F1 8.0 Tf 254.71 683.60 Td (nobody assigned\)) Tj ET
+BT 0.00 g /F1 8.0 Tf 355.65 704.40 Td (2026-10-12-steering.md: "Risk: the vendor API rate) Tj ET
+BT 0.00 g /F1 8.0 Tf 355.65 694.00 Td (limit might not carry the pilot load. Ben wants a load) Tj ET
+BT 0.00 g /F1 8.0 Tf 355.65 683.60 Td (test before go-live.") Tj ET
+0.60 G 0.50 w 50.00 678.10 m 545.00 678.10 l S
+BT 0.00 g /F1 8.0 Tf 53.00 667.20 Td (Test environment still uses) Tj ET
+BT 0.00 g /F1 8.0 Tf 53.00 656.80 Td (production-like data; nobody) Tj ET
+BT 0.00 g /F1 8.0 Tf 53.00 646.40 Td (owns the cleanup) Tj ET
+BT 0.00 g /F1 8.0 Tf 176.92 667.20 Td (TBD) Tj ET
+BT 0.00 g /F1 8.0 Tf 208.70 667.20 Td (TBD) Tj ET
+BT 0.00 g /F1 8.0 Tf 254.71 667.20 Td (TBD) Tj ET
+BT 0.00 g /F1 8.0 Tf 355.65 667.20 Td (2026-10-12-steering.md: "Dev raised that the test) Tj ET
+BT 0.00 g /F1 8.0 Tf 355.65 656.80 Td (environment still uses production-like data. Nobody) Tj ET
+BT 0.00 g /F1 8.0 Tf 355.65 646.40 Td (owns the cleanup yet.") Tj ET
+0.60 G 0.50 w 50.00 640.90 m 545.00 640.90 l S
+BT 0.00 g /F1 8.0 Tf 53.00 630.00 Td (Budget for the extra two weeks is) Tj ET
+BT 0.00 g /F1 8.0 Tf 53.00 619.60 Td (unresolved) Tj ET
+BT 0.00 g /F1 8.0 Tf 176.92 630.00 Td (TBD) Tj ET
+BT 0.00 g /F1 8.0 Tf 208.70 630.00 Td (TBD) Tj ET
+BT 0.00 g /F1 8.0 Tf 254.71 630.00 Td (Clara checks with finance) Tj ET
+BT 0.00 g /F1 8.0 Tf 355.65 630.00 Td (2026-10-12-steering.md: "Anna said the budget for) Tj ET
+BT 0.00 g /F1 8.0 Tf 355.65 619.60 Td (the extra two weeks is still open; Clara will check) Tj ET
+BT 0.00 g /F1 8.0 Tf 355.65 609.20 Td (with finance.") Tj ET
+0.60 G 0.50 w 50.00 603.70 m 545.00 603.70 l S
+BT 0.30 g /F2 9.0 Tf 50.00 802.00 Td (Project Memory \267 Risks) Tj ET
+BT 0.30 g /F1 9.0 Tf 498.97 802.00 Td (2026-10-23) Tj ET
+0.60 G 0.50 w 50.00 796.00 m 545.00 796.00 l S
+BT 0.30 g /F1 9.0 Tf 288.74 28.00 Td (1 / 1) Tj ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000218 00000 n 
+0000000320 00000 n 
+0000000456 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+3270
+%%EOF
