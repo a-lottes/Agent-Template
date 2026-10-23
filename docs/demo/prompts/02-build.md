@@ -15,7 +15,14 @@ Baue Schritt 02 auf dem Branch demo/live. Kein Merge, nur Dateien bearbeiten. Zi
      actions.md: | Action | Owner | Due | Status | Source | mit Zeile | <verb first> | <name or TBD> | <YYYY-MM-DD or TBD> | open | <file: quoted line> |
      risks.md: | Risk | Impact | Likelihood | Mitigation | Source | mit Zeile | <risk> | low/med/high | low/med/high | <idea or TBD> | <file: quoted line> |
    - Regeln ergänzen: Datum ISO, Herkunftsjahr aus der Notiz, hedged statements als offene Frage.
+   - Diktierte Todos/Notizen: Wenn der Nutzer Todos oder Notizen direkt im Chat diktiert, zuerst wörtlich als inbox/YYYY-MM-DD-<thema>.md speichern, dann wie jede andere Inbox-Datei verarbeiten. Eigene Todos ohne genannten Owner bekommen Owner "me". Description entsprechend erweitern (auch deutsch: Todos).
+   - Schreibregel: nur in memory/ und inbox/ (für diktierte Notizen), nie .env oder Credentials.
    - Wichtig: Frontmatter nur name und description, kein allowed-tools (damit wird der Skill nicht geladen).
 6. Lösche skills/meeting-to-actions/templates/ (actions.md, decisions.md, risks.md).
 
-Danach: claude plugin validate --strict skills und claude plugin validate --strict agents ausführen und Ergebnis zeigen. Zum Schluss committen: "Demo 02: Skill einsetzen (Marketplace, Tabellen im Skill, Hedged-Regel)".
+Danach: claude plugin validate --strict skills und claude plugin validate --strict agents ausführen und Ergebnis zeigen. Dann committen: "Demo 02: Skill einsetzen (Marketplace, Tabellen im Skill, Hedged-Regel)".
+
+Zum Schluss das Plugin für diesen Ordner registrieren, damit es in neuen Sessions geladen wird:
+claude plugin marketplace add . --scope local
+claude plugin install project-memory@adesso-agent-demo --scope local
+Sag mir dann, dass ich eine neue Claude-Session öffnen soll.

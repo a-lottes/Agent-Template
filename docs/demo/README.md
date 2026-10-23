@@ -12,6 +12,14 @@ Geht live etwas schief, springt ihr einfach auf den nächsten Branch.
 | `demo/04-skill-github` | Skill anpassen: Aufgaben als GitHub-Issues per `gh` | [ABLAUF](04-skill-github/ABLAUF.md) | [VISUELL](04-skill-github/VISUELL.md) |
 | `demo/05-skill-check` | Validieren und kurz evaluieren | [ABLAUF](05-skill-check/ABLAUF.md) | [VISUELL](05-skill-check/VISUELL.md) |
 
+## Start hier: [ANLEITUNG.md](ANLEITUNG.md)
+
+Die Live-Demo in vier Schritten, alles in diesem Repo-Ordner: AI Hub zeigen, Skill bauen, um PDF erweitern, um GitHub-Issues erweitern. Die Prompts liegen als Dateien in [prompts/](prompts/README.md).
+
+---
+
+Ältere Varianten (mit separatem Workspace `~/agent-demo`), weiterhin gültig als Backup:
+
 **Für den Vortrag (15 Minuten):** [LIVE-15MIN.md](LIVE-15MIN.md), die gekürzte Fassung mit Zeitplan.
 
 **Live-Plan (ausführlich): alles live auf einem Branch `demo/live` bauen, ohne Branch-Wechsel und Merges:** [LIVE-PLAN.md](LIVE-PLAN.md). Die `demo/0X-*`-Branches dienen dabei als Backup und Referenz. Alle Prompts liegen als einzelne Dateien in [prompts/](prompts/README.md) und lassen sich mit `@` direkt an Claude übergeben.
