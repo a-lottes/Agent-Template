@@ -19,7 +19,7 @@ Getestet wird in `.scratch/` im Repo (gitignored), nicht in `/tmp`. Schreiben na
 
 ## Was zu zeigen ist
 
-`git diff HEAD~1 -- skills/meeting-to-actions/SKILL.md` zeigt die neue Zeile. Dazu ein kurzer Blick in `md_to_pdf.py`: *„Das Layout steckt im Skript, das Modell entscheidet nur, wann es läuft.“*
+Source Control in VS Code zeigt unter „Changes“ die neue Zeile in `SKILL.md` (Änderungen aus Schritt 2 vorher gestagt). Dazu ein kurzer Blick in `md_to_pdf.py`: *„Das Layout steckt im Skript, das Modell entscheidet nur, wann es läuft.“*
 
 ## Benutzen
 

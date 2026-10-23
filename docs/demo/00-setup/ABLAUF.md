@@ -15,12 +15,12 @@ Roter Faden: *„Ein Skill ist eine Anleitung, die man wie Code behandelt: klein
 
 | Branch | Rolle |
 |---|---|
-| `demo/01-ai-hub` | **Startpunkt.** Von hier wird `demo/live` angelegt, auf dem live gebaut wird |
+| `demo/01-ai-hub` | **Startpunkt.** Von hier wird `demo/live` angelegt, auf dem live gebaut wird (ohne Commits) |
 | `demo/02-skill-use`, `demo/03-skill-pdf`, `demo/04-skill-github` | Referenz und Backup: fertiger Stand nach dem jeweiligen Bauschritt |
 | `demo/05-skill-check` | Referenz: zusätzlich Validierung und Eval-Fälle (optional) |
 | `demo/00-setup` | Basis mit Doku und Hilfsskripten |
 
-Einen fertigen Stand holst du ohne Merge mit `git checkout demo/0X-… -- <pfade>`, siehe [ANLEITUNG.md](../ANLEITUNG.md) unter „Wenn etwas hakt“.
+Einen fertigen Stand holst du ohne Merge mit `git restore --source demo/0X-… -- <pfade>`, siehe [ANLEITUNG.md](../ANLEITUNG.md) unter „Wenn etwas hakt“.
 
 ## Hilfsskripte
 
@@ -51,6 +51,7 @@ Siehe [ANLEITUNG.md](../ANLEITUNG.md): einmalig Hub-Adresse und Key hinterlegen,
 ## Stolperfallen
 
 - **Neue Session nach jedem Bauschritt**, sonst kennt Claude den geänderten Skill nicht.
+- **Keine Commits:** Die Bau-Prompts lassen die Änderungen im Working Tree, damit der Diff in VS Code sichtbar ist. Nach dem Zeigen alles stagen, dann zeigt der nächste Diff nur den neuen Schritt.
 - **Ein `claude`-Alias mit `--settings …`** (z. B. in `~/.zshrc`) überstimmt `/provider`. Für die Demo entfernen.
 - **Keys nie im Klartext** in eingecheckten Dateien. Der Hub-Key kommt per `apiKeyHelper` aus dem Schlüsselbund (`scripts/provider.sh set-key`).
 - **Hub-Modelle sind für Agenten-Läufe deutlich langsamer.** Deshalb laufen die Bauschritte mit `anthropic`.
