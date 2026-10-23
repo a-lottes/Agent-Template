@@ -1,5 +1,7 @@
 # Spickzettel: Befehle und Prompts pro Schritt
 
+> **Archiv:** Ältere Variante mit separatem Workspace `~/agent-demo` und Branch-Wechseln. Sie funktioniert weiterhin, ist aber nicht mehr der empfohlene Weg. **Aktuell gilt [ANLEITUNG.md](../ANLEITUNG.md).**
+
 Alles zum Kopieren, in der Reihenfolge der Demo. **Terminal** = normales Terminal (oder VS-Code-Terminal), **Claude Code** = Eingabe in der laufenden Claude-Code-Sitzung.
 
 Repo-Pfad in den Beispielen: `~/Documents/projects/Agent-Template`. Workspace der Demo: `~/agent-demo`.
