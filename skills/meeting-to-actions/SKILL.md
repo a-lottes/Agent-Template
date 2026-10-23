@@ -1,6 +1,6 @@
 ---
 name: meeting-to-actions
-description: Use whenever files in inbox/ (meeting notes, minutes, transcripts, project documents) should be processed into the project memory, i.e. decisions, action items, risks or open questions written to memory/decisions.md, memory/actions.md, memory/risks.md. Also for German requests (Protokoll, Besprechungsnotizen, Mitschrift, Projektgedächtnis, Aufgaben, Entscheidungen, Risiken).
+description: Use whenever files in inbox/ (meeting notes, minutes, transcripts, project documents) should be processed into the project memory, i.e. decisions, action items, risks or open questions written to memory/decisions.md, memory/actions.md, memory/risks.md. Also when the user dictates own todos or notes in the chat. Also for German requests (Protokoll, Besprechungsnotizen, Mitschrift, Projektgedächtnis, Aufgaben, Todos, Entscheidungen, Risiken).
 ---
 
 # Meeting to actions
@@ -49,3 +49,4 @@ Run each subagent in the foreground (`run_in_background: false`) and wait for it
 - Never invent names, dates or numbers. Quote the source line for each finding.
 - Write only inside `memory/`. Never touch `.env` or credential files.
 - Keep customer names and personal data out of file names.
+- Notes or todos dictated directly in the chat: first save them verbatim as `inbox/YYYY-MM-DD-<topic>.md`, then process that file like any other inbox file. For the user's own todos without a named owner, the owner is `me`.
