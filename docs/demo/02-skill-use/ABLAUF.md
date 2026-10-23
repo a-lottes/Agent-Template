@@ -20,6 +20,8 @@ Am Ende registriert Claude das Plugin für den Repo-Ordner (`claude plugin marke
 
 ## Was zu zeigen ist
 
+In VS Code unter Source Control den Diff des Schritts (die Bau-Prompts committen nicht).
+
 `skills/meeting-to-actions/SKILL.md`:
 - Frontmatter: *„Das ist die Schnittstelle. Nur diese Zeilen kennt Claude dauerhaft.“*
 - Prozedur: *„Das ist die Implementierung. Sie wird erst geladen, wenn die Beschreibung passt.“*
