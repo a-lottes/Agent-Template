@@ -2,6 +2,10 @@
 
 Turns meeting notes and documents into decisions, actions and risks. Demo plugin for "Claude Plugins, Skills & Agents Hands-on".
 
+## Live demo (BL-AT 2026)
+
+Step-by-step guide for building and extending this plugin live, including the adesso AI Hub: [docs/demo/ANLEITUNG.md](docs/demo/ANLEITUNG.md) (German). Prompts as files: [docs/demo/prompts/](docs/demo/prompts/README.md).
+
 ## What is inside
 
 | Component | File | Model |
@@ -17,7 +21,7 @@ Model per subagent is set in the frontmatter (`model:`). Allowed values: `haiku`
 
 ## Try it
 
-Demo folder layout (all automation scripts assume `~/agent-demo`):
+Separate workspace layout for unattended runs (the automation scripts below assume `~/agent-demo`):
 
 ```
 ~/agent-demo/

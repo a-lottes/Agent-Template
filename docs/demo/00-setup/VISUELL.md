@@ -18,58 +18,50 @@ flowchart LR
     style E fill:#2da44e,color:#fff,stroke:#2da44e
 ```
 
-## Sechs Branches, eine Treppe
+## Ein Ordner, ein Branch, vier Schritte
 
-Jede Stufe baut auf der vorherigen auf. Klappt live etwas nicht, nehmen wir einfach die nächste Stufe.
+Live gebaut wird auf einem Branch `demo/live`. Die fertigen Stände der Schritte liegen als Referenz in eigenen Branches bereit.
 
 ```mermaid
 gitGraph
     commit id: "main: Plugin aus Teil 1"
-    branch demo/00-setup
-    commit id: "Demo-Workspace"
     branch demo/01-ai-hub
-    commit id: "/provider"
-    branch demo/02-skill-use
-    commit id: "Skill einsetzen"
-    branch demo/03-skill-pdf
-    commit id: "MD + PDF"
-    branch demo/04-skill-github
-    commit id: "GitHub-Issues"
-    branch demo/05-skill-check
-    commit id: "Prüfen"
+    commit id: "Startpunkt"
+    branch demo/live
+    commit id: "Demo 02: Skill"
+    commit id: "Demo 03: PDF"
+    commit id: "Demo 04: GitHub"
 ```
 
-## Der Demo-Arbeitsplatz
+## Der Arbeitsplatz
 
-Ein Ordner auf dem Laptop. Das Setup-Skript kopiert das Plugin des aktuellen Git-Branches hinein, so ist jeder Demo-Schritt mit einem Befehl hergestellt.
+Alles passiert im Repo-Ordner. Eingaben landen in `inbox/`, Ergebnisse in `memory/`. Beide Ordner sind von Git ausgeschlossen.
 
 ```mermaid
 flowchart TB
-    subgraph WS["📁 ~/agent-demo"]
-        IN["📥 inbox/<br/>Meeting-Protokoll"]
-        MEM["🧠 memory/<br/>decisions · actions · risks"]
-        CM["📄 CLAUDE.md<br/>Projektkontext"]
-        ST["⚙️ .claude/<br/>Einstellungen & Provider"]
-        PL["📦 project-memory<br/>(Kopie aus dem Repo)"]
+    subgraph REPO["📁 Repo-Ordner"]
+        SK["🧩 skills/meeting-to-actions<br/>der Skill, den wir bauen"]
+        IN["📥 inbox/<br/>Protokolle, diktierte Todos"]
+        MEM["🧠 memory/<br/>actions · decisions · risks (+ PDF)"]
+        CFG["⚙️ .claude/<br/>/provider · /actions · Provider-Profil"]
     end
-    REPO[("🗂️ Git-Repo<br/>aktueller Branch")] -.->|setup-workspace.sh| PL
-    IN -->|Agent liest| AG(("🤖 Claude Code"))
-    PL -->|Skill · Subagents · Hooks| AG
-    AG -->|schreibt nur hierhin| MEM
+    U(["👤 Prompt oder Todos"]) --> AG(("🤖 Claude Code"))
+    SK --> AG
+    IN --> AG
+    AG -->|schreibt| MEM
+    AG -.->|auf Wunsch| GH["🐙 GitHub-Issues"]
 ```
 
-## Ablauf über 20 Minuten
+## Ablauf über 15 Minuten
 
 ```mermaid
 timeline
     title Live-Demo BL-AT 2026
-    0-1 min   : Einstieg
-    1-4 min   : AI Hub zeigen : /provider : Copilot
-    4-8 min   : Skill einsetzen
-    8-12 min  : Anpassen 1 : Markdown + PDF
-    12-16 min : Anpassen 2 : GitHub-Issues
-    16-19 min : Prüfen : validate + Kurzlauf
-    19-20 min : Fazit : Q&A
+    0-2 min   : AI Hub zeigen : /provider
+    2-6 min   : Skill bauen : Todos eintragen : /actions
+    6-10 min  : Skill erweitern : PDF
+    10-14 min : Skill erweitern : GitHub-Issues
+    14-15 min : Fazit
 ```
 
 ## Kernaussage

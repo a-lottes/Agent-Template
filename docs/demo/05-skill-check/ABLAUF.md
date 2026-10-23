@@ -1,6 +1,6 @@
-# 05 · Validieren und kurz evaluieren (Detail für Jan)
+# 05 · Validieren und kurz evaluieren (optional, Detail)
 
-Branch: `demo/05-skill-check` · baut auf `demo/04-skill-github` auf · Dauer live: ca. 2 Minuten · Profil: `anthropic`
+Optionaler Zusatz zu [ANLEITUNG.md](../ANLEITUNG.md). Die Dateien liegen fertig im Referenz-Branch `demo/05-skill-check`. Auf `demo/live` holst du sie ohne Merge mit `git checkout demo/05-skill-check -- evals scripts/eval.sh scripts/skill_check.py` oder baust sie mit [prompts/05-build.md](../prompts/05-build.md). Dauer ca. 2 Minuten.
 
 ## Botschaft
 
