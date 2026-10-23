@@ -26,6 +26,8 @@ Zielrepo, in dieser Reihenfolge: `--repo`, dann `$PROJECT_MEMORY_GH_REPO`, dann 
 
 ## Benutzen
 
+Vorher in Source Control die Änderungen des vorigen Schritts stagen (**+**), damit unter „Changes“ nur dieser Schritt steht.
+
 1. [prompts/04-demo-issues.md](../prompts/04-demo-issues.md): Claude zeigt die Vorschau und fragt nach.
 2. `Ja, bitte anlegen.`: Claude meldet die Issue-Links. In `memory/actions.md` steht `open · #<nr>`.
 3. Im Browser die Issue-Liste des Repos zeigen.
