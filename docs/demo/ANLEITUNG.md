@@ -32,13 +32,25 @@ Danach den Ordner in VS Code öffnen, eine Claude-Session starten und den Vertra
 ## Startzustand herstellen (vor jedem Durchlauf)
 
 ```bash
+git reset --hard && git clean -fd      # verwirft die nicht committeten Änderungen eines vorigen Durchlaufs
 git switch demo/01-ai-hub
 git branch -D demo/live 2>/dev/null
 git switch -c demo/live
 demo/reset.sh
 ```
 
+`git clean -fd` entfernt nur ungetrackte Dateien, keine von Git ausgeschlossenen. `providers/.hub-url`, `.claude/settings.local.json`, `inbox/` und `memory/` bleiben also erhalten.
+
 `demo/reset.sh` legt `inbox/` mit einem Beispielprotokoll an, leert `memory/`, stellt den Provider auf `anthropic` und entfernt eine alte Plugin-Registrierung. `inbox/` und `memory/` sind von Git ausgeschlossen.
+
+## Diff pro Schritt (ohne Commits)
+
+Die Bau-Prompts committen nicht. Die Änderungen bleiben sichtbar in VS Code unter Source Control (`Ctrl+Shift+G`), ein Klick auf eine Datei zeigt den Diff.
+
+Damit beim nächsten Schritt nur dessen Änderungen zu sehen sind, **stagst du nach dem Zeigen alles** (in Source Control das **+** neben „Changes“, oder `git add -A`). Dann gilt:
+
+- **Staged Changes:** alles aus den vorigen Schritten
+- **Changes:** nur der aktuelle Schritt
 
 ---
 
@@ -85,9 +97,9 @@ In der CLI statt „neue Session“: `/exit`, dann `claude -c`.
 Führe @docs/demo/prompts/02-build.md aus.
 ```
 
-Claude baut den Skill, prüft ihn mit `claude plugin validate`, committet und registriert das Plugin für diesen Ordner. **Neue Session öffnen.**
+Claude baut den Skill, prüft ihn mit `claude plugin validate` und registriert das Plugin für diesen Ordner. Committet wird nicht. **Neue Session öffnen.**
 
-**Zeigen:** [`skills/meeting-to-actions/SKILL.md`](../../skills/meeting-to-actions/SKILL.md). Die Beschreibung ist die Schnittstelle, die Anleitung die Implementierung, und die Tabellen stehen direkt im Skill.
+**Zeigen:** VS Code → Source Control (`Ctrl+Shift+G`): alle Änderungen des Schritts als Diff, vor allem [`skills/meeting-to-actions/SKILL.md`](../../skills/meeting-to-actions/SKILL.md). Die Beschreibung ist die Schnittstelle, die Anleitung die Implementierung, und die Tabellen stehen direkt im Skill.
 
 **Benutzen:**
 
@@ -113,11 +125,7 @@ Führe @docs/demo/prompts/03-build.md aus.
 
 **Neue Session öffnen.**
 
-**Zeigen:** Was ist neu im Skill?
-
-```bash
-git diff HEAD~1 -- skills/meeting-to-actions/SKILL.md
-```
+**Zeigen:** Source Control in VS Code. Unter „Changes“ steht nur, was dieser Schritt geändert hat (siehe „Diff pro Schritt“ oben).
 
 Neu ist Schritt 6, ein Aufruf von `scripts/md_to_pdf.py`. Das Layout steckt im Skript, das Modell entscheidet nur, wann es läuft.
 
@@ -143,11 +151,7 @@ Führe @docs/demo/prompts/04-build.md aus.
 
 **Neue Session öffnen.**
 
-**Zeigen:** den neuen Abschnitt im Skill, „Later: action items as GitHub issues“. Issues entstehen nur auf Wunsch, nach einer Vorschau und ohne Duplikate.
-
-```bash
-git diff HEAD~1 -- skills/meeting-to-actions/SKILL.md
-```
+**Zeigen:** Source Control in VS Code, darin den neuen Abschnitt im Skill, „Later: action items as GitHub issues“. Issues entstehen nur auf Wunsch, nach einer Vorschau und ohne Duplikate.
 
 **Benutzen:**
 
@@ -177,7 +181,7 @@ Danach die Demo-Issues nach Bestätigung schließen. Die Plugin-Registrierung en
 
 | Problem | Ausweg |
 |---|---|
-| Ein Bau-Prompt liefert Murks oder dauert zu lang | Fertigen Stand aus dem Referenz-Branch holen, ohne Merge: `git checkout demo/02-skill-use -- skills agents .claude-plugin README.md` (bzw. `demo/03-skill-pdf`, `demo/04-skill-github` mit `skills commands .claude-plugin`), dann committen |
+| Ein Bau-Prompt liefert Murks oder dauert zu lang | Fertigen Stand aus dem Referenz-Branch holen, ohne Merge und ohne Stagen: `git restore --source demo/02-skill-use -- skills agents .claude-plugin README.md` (bzw. `demo/03-skill-pdf`, `demo/04-skill-github` mit `skills commands .claude-plugin`). Die Dateien erscheinen unter „Changes“. Nach Schritt 2 das Plugin registrieren (nächste Zeile) |
 | Skill wird nach dem Bauen nicht verwendet | Neue Session geöffnet? Nach Schritt 2 muss das Plugin registriert sein: `claude plugin marketplace add . --scope local` und `claude plugin install project-memory@adesso-agent-demo --scope local` |
 | `/provider adesso-hub` meldet einen `apiKeyHelper`-Fehler | Key fehlt: `scripts/provider.sh set-key` |
 | Claude fragt nach Freigaben | Zustimmen, das ist beim Bauen normal |
